@@ -60,13 +60,13 @@ while (true) {
 
             try {
                 IExercise selectedExercise = exerciseInstances[index];
-                
+
                 WriteLine($"===[{selectedExercise.Name}]===");
                 WriteLine();
 
                 selectedExercise.Run();
             }
-            catch(Exception e) {
+            catch (Exception e) {
                 WriteLine("Exception was occured during execution:");
                 WriteLine(e.ToString());
             }

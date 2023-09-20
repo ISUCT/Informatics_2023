@@ -1,18 +1,16 @@
-﻿using System.ComponentModel;
-
-namespace CodeWarsExercises.Codewars {
+﻿namespace CodeWarsExercises.Codewars {
     internal class CountTheMonkeysExercise : IExercise {
 
         public string Name => "Count the monkeys" + (m_optimized ? " (optimized)" : "");
 
         private bool m_optimized;
-        
+
         public CountTheMonkeysExercise(bool optimized) {
             m_optimized = optimized;
         }
 
         public static int[] CountTheMonkeys(int n) {
-            if(n <= 0) throw new ArgumentException("n > 0");
+            if (n <= 0) throw new ArgumentException("n > 0");
 
             int[] monkeys = new int[n];
 
@@ -32,10 +30,10 @@ namespace CodeWarsExercises.Codewars {
             Console.Write(monkey.Length);
             Console.Write(" --> [");
 
-            for(int x = 0; x < monkey.Length; ++x) {
+            for (int x = 0; x < monkey.Length; ++x) {
                 Console.Write(monkey[x]);
                 bool itemIsLast = x >= monkey.Length - 1;
-                
+
                 if (!itemIsLast)
                     Console.Write(", ");
             }

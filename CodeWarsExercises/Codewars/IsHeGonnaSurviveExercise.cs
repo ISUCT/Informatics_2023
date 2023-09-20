@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CodeWarsExercises.Codewars {
+﻿namespace CodeWarsExercises.Codewars {
     internal class IsHeGonnaSurviveExercise : IExercise {
         public string Name => "Is He Gonna Survive?";
 
@@ -20,7 +13,7 @@ namespace CodeWarsExercises.Codewars {
 
             if (dragonHealth <= 0)
                 throw new ArgumentException("dragonHealth must be >= 1");
-            
+
             return bulletCount >= dragonCount * dragonHealth;
         }
 

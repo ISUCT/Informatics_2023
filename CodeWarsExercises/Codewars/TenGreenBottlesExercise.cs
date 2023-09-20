@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CodeWarsExercises.Codewars {
+﻿namespace CodeWarsExercises.Codewars {
     internal class TenGreenBottlesExercise : IExercise {
         public string Name => "Ten Green Bottles";
 
@@ -23,7 +17,7 @@ namespace CodeWarsExercises.Codewars {
         };
 
         private string GetTextRepresentation(int n, bool lower) {
-            if(lower) {
+            if (lower) {
                 return letters[n].ToLower();
             }
 
@@ -37,7 +31,7 @@ namespace CodeWarsExercises.Codewars {
             if (bottleCount < 1 || bottleCount > 10)
                 throw new ArgumentException("number must be lie between 1 and 10.");
 
-            while(bottleCount > 0) {
+            while (bottleCount > 0) {
                 string bottleSpelling;
 
                 bottleSpelling = GetBottleSpelling(bottleCount);

@@ -1,7 +1,4 @@
-﻿using System.Globalization;
-
-
-namespace CodeWarsExercises.Codewars {
+﻿namespace CodeWarsExercises.Codewars {
     internal class FindAllOccurrencesOfAnElementInAnArrayExercise : IExercise {
         public string Name => "Find all occurrences of an element in an array";
 

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 
 namespace CodeWarsExercises {
     internal static class FormatUtils {
@@ -10,9 +6,9 @@ namespace CodeWarsExercises {
         public static string FormatAsString<T>(this T[] values) {
             if (values.Length == 0)
                 return "[]";
-            
+
             StringBuilder sb = new StringBuilder("[");
-            foreach(T v in values) {
+            foreach (T v in values) {
                 sb.Append(v?.ToString() ?? "*null*");
                 sb.Append(", ");
             }
