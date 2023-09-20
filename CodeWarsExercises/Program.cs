@@ -4,15 +4,21 @@ using System.Globalization;
 
 using static System.Console;
 
-IExercise[] exercises = new IExercise[] {
-    new EvenOrOdd()
+// This way we don't need to care about exercise's internal state undefined.
+Func<IExercise>[] exerciseFactories = new[] {
+    () => new EvenOrOdd()
 };
+
+IExercise[] exerciseInstances = new IExercise[exerciseFactories.Length];
 
 while (true) {
     WriteLine("Choose an exercise you wish to test:");
 
-    for (int index = 0; index < exercises.Length; ++index) {
-        WriteLine($"{index:00}. {exercises[index].Name}");
+    for (int index = 0; index < exerciseFactories.Length; ++index) {
+        IExercise instance = exerciseFactories[index].Invoke();
+        exerciseInstances[index] = instance;
+
+        WriteLine($"{index:00}. {instance.Name}");
     }
 
     WriteLine();
@@ -33,18 +39,31 @@ while (true) {
             );
 
         if (inputIsCorrect) {
-            if (index < 0 || index >= exercises.Length) {
-                WriteLine($"The index must lies between 0 and {exercises.Length}.");
-                WriteLine($"[0, {exercises.Length})");
+            if (index < 0 || index >= exerciseFactories.Length) {
+                WriteLine($"The index must lies between 0 and {exerciseFactories.Length}.");
+                WriteLine($"[0, {exerciseFactories.Length})");
                 continue;
             }
 
             Clear();
-            exercises[index].Run();
+
+            try {
+                IExercise selectedExercise = exerciseInstances[index];
+                
+                WriteLine($"===[{selectedExercise.Name}]===");
+                WriteLine();
+
+                selectedExercise.Run();
+            }
+            catch(Exception e) {
+                WriteLine("Exception was occured during execution:");
+                WriteLine(e.ToString());
+            }
 
             WriteLine("Hit Enter to continue...");
             ReadLine();
             Clear();
+            break;
         }
     }
 }
