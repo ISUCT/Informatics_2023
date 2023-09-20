@@ -18,18 +18,7 @@ namespace CodeWarsExercises.Codewars {
         }
 
         public void Run() {
-            Console.Write("Enter array of integers where each item is splited by space: ");
-
-
-            int[] ints = Console.ReadLine()?.
-                Split(' ', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).
-                Select(x =>
-                    int.TryParse(x, NumberStyles.Number, CultureInfo.InvariantCulture, out int y) ?
-                    y :
-                    throw new ArgumentException($"'{x}' can't be parsed as int.")
-                    ).
-                    ToArray() ??
-                    throw new InvalidOperationException("Execution was interrupted.");
+            int[] ints = ConsoleUtils.ReadOneDimensionalArray("Enter array of integers where each item is splited by space: ");
 
             int item = ConsoleUtils.ReadInt("Enter integer to search: ");
 

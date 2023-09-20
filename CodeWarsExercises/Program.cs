@@ -15,7 +15,9 @@ Func<IExercise>[] exerciseFactories = new Func<IExercise>[] {
     () => new IsHeGonnaSurviveExercise(),
     () => new NumberToStringExercise(),
     () => new PolishAlphabetExercise(),
-    () => new FindAllOccurrencesOfAnElementInAnArrayExercise()
+    () => new FindAllOccurrencesOfAnElementInAnArrayExercise(),
+    () => new SumOfMinimumsExercise(SumOfMinimumsExercise.Mode.UseNestedArray),
+    () => new SumOfMinimumsExercise(SumOfMinimumsExercise.Mode.Use2DArrays)
 };
 
 IExercise[] exerciseInstances = new IExercise[exerciseFactories.Length];
