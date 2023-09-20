@@ -1,10 +1,11 @@
 ﻿using CodeWarsExercises;
+using CodeWarsExercises.Codewars;
 using System.Globalization;
 
 using static System.Console;
 
 IExercise[] exercises = new IExercise[] {
-    // TODO: Fill with exercises.
+    new EvenOrOdd()
 };
 
 while (true) {
