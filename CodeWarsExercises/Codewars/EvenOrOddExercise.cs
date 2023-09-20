@@ -1,5 +1,5 @@
 ﻿namespace CodeWarsExercises.Codewars {
-    internal class EvenOrOdd : IExercise {
+    internal class EvenOrOddExercise : IExercise {
         public string Name => "Even or odd";
 
         public void Run() {

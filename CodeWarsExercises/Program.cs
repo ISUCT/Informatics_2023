@@ -6,8 +6,8 @@ using static System.Console;
 
 // This way we don't need to care about exercise's internal state undefined.
 Func<IExercise>[] exerciseFactories = new Func<IExercise>[] {
-    () => new EvenOrOdd(),
-    () => new CountingSheep(),
+    () => new EvenOrOddExercise(),
+    () => new CountingSheepExercise(),
     () => new CountTheMonkeysExercise(optimized: false),
     () => new CountTheMonkeysExercise(optimized: true)
 };

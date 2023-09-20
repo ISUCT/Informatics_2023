@@ -1,5 +1,5 @@
 ﻿namespace CodeWarsExercises.Codewars {
-    internal class CountingSheep : IExercise {
+    internal class CountingSheepExercise : IExercise {
         public string Name => "Counting sheep...";
 
         public static int CountSheeps(bool?[] places) {
