@@ -13,7 +13,8 @@ Func<IExercise>[] exerciseFactories = new Func<IExercise>[] {
     () => new TenGreenBottlesExercise(),
     () => new SchoolPaperworkExercise(),
     () => new IsHeGonnaSurviveExercise(),
-    () => new NumberToStringExercise()
+    () => new NumberToStringExercise(),
+    () => new PolishAlphabetExercise()
 };
 
 IExercise[] exerciseInstances = new IExercise[exerciseFactories.Length];
