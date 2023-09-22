@@ -1,10 +1,11 @@
-﻿using System.Text;
+﻿namespace CodeWarsExercises.Codewars
+{
+    using System.Text;
 
-namespace CodeWarsExercises.Codewars {
-    internal class PolishAlphabetExercise : IExercise {
-        public string Name => "Polish alphabet";
-
-        private static readonly Dictionary<char, char> Alphabet = new() {
+    internal class PolishAlphabetExercise : IExercise
+    {
+        private static readonly Dictionary<char, char> Alphabet = new Dictionary<char, char>()
+        {
             { 'ą', 'a' },
             { 'ć', 'c' },
             { 'ę', 'e' },
@@ -13,22 +14,30 @@ namespace CodeWarsExercises.Codewars {
             { 'ó', 'o' },
             { 'ś', 's' },
             { 'ź', 'z' },
-            { 'ż', 'z' }
+            { 'ż', 'z' },
         };
 
-        public static string Englify(string input) {
+        public string Name => "Polish alphabet";
+
+        public static string Englify(string input)
+        {
             var output = new StringBuilder(input);
 
             for (int i = 0; i < input.Length; ++i)
+            {
                 if (Alphabet.TryGetValue(input[i], out char c))
+                {
                     output[i] = c;
+                }
+            }
 
             return output.ToString();
         }
 
-        public void Run() {
+        public void Run()
+        {
             Console.Write("Enter string to englify: ");
-            Console.WriteLine(Englify(Console.ReadLine()!));
+            Console.WriteLine(Englify(Console.ReadLine() !));
         }
     }
 }

@@ -1,42 +1,54 @@
-﻿namespace CodeWarsExercises.Codewars {
-    internal class CountingSheepExercise : IExercise {
+﻿namespace CodeWarsExercises.Codewars
+{
+    internal class CountingSheepExercise : IExercise
+    {
         public string Name => "Counting sheep...";
 
-        public static int CountSheeps(bool?[] places) {
+        public static int CountSheeps(bool[] places)
+        {
             if (places is null)
+            {
                 throw new ArgumentNullException(nameof(places));
+            }
 
             int counter = 0;
 
-            foreach (var sheep in places) {
-                if (!sheep.HasValue)
-                    throw new ArgumentException("There's musn't be nulls for sheeps.");
-
-                if (sheep.Value)
+            foreach (var sheep in places)
+            {
+                if (sheep)
+                {
                     ++counter;
+                }
             }
 
             return counter;
         }
 
-        public void Run() {
+        public void Run()
+        {
+            {
+                string message =
+                    "Describe sheep places splited by space. \n" +
+                    "enter 'true' per place if sheep is in it's place or 'false' otherwise: ";
 
-            Console.Write("Describe sheep places splited by space. \n" +
-                "enter 'true' per place if sheep is in it's place or 'false' otherwise: ");
+                Console.Write(message);
+            }
 
-            bool?[]? sheeps = Console.ReadLine()?.
+            bool[] sheeps = Console.ReadLine()?.
                 Split(
                 ' ',
-                StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries
-                ).Select<string, bool?>(x => {
-                    switch (x.ToLower()) {
-                        case "true": return true;
-                        case "false": return false;
-                        default: return null;
-                    }
-                })?.ToArray();
+                StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries).
+                Select(x =>
+                {
+                    return x.ToLower() switch
+                    {
+                        "true" => true,
+                        "false" => false,
+                        _ => throw new InvalidOperationException($"Can't parse {x} as true or false."),
+                    };
+                }).ToArray() ?? throw new InvalidOperationException("Input was interrupted.");
 
-            Console.WriteLine($"Sheep count: {CountSheeps(sheeps!)}");
+            Console.WriteLine($"Sheep count: {CountSheeps(sheeps)}");
         }
     }
 }
