@@ -4,3 +4,34 @@
 
 Репозиторий основан на репозиториях https://github.com/ISUCT/Informatics_2023 (ветвь main) и https://github.com/ISUCT/Tprogramming_2022 (ветвь main).
 
+
+## CodeWars
+Был решён следующий список задач с сайта codewars:
+https://www.codewars.com/kata/even-or-odd/
+
+https://www.codewars.com/kata/54edbc7200b811e956000556
+
+https://www.codewars.com/kata/56f69d9f9400f508fb000ba7
+
+https://www.codewars.com/kata/5838e2978bbc04b7cd000008
+
+
+https://www.codewars.com/kata/55f9b48403f6b87a7c0000bd
+
+https://www.codewars.com/kata/59ca8246d751df55cc00014c
+
+https://www.codewars.com/kata/53934feec44762736c00044b
+
+https://www.codewars.com/kata/57ab2d6072292dbf7c000039
+
+
+
+https://www.codewars.com/kata/59a9919107157a45220000e1
+
+https://www.codewars.com/kata/5d5ee4c35162d9001af7d699
+
+Все решения задач находятся в проекте CodeWarsExercises. 
+
+Чтобы не засорять решение малеьнкими проектами было решено поместить исходный код задач в в один проект. Чтобы было удобно запускать задачи, был написан небольшой консольный интерфейс:
+
+![Скриншот интерфейса](./Screenshot%202023-09-21%20001721.png)
