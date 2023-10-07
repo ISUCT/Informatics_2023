@@ -39,5 +39,5 @@ func square(x float64) float64 {
 	return x * x
 }
 func root_nth_degree(degree float64) float64 {
-	return float64(1) / float64(degree)
+	return 1 / degree
 }
