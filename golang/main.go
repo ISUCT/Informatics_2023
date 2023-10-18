@@ -14,7 +14,7 @@ func main() {
 	x_delta := 0.5
 	
 	fmt.Println("Решения задачи под А:")
-	for x := x_begin; x <= x_end; x = x + x_delta {
+	for x := x_begin; x <= x_end; x += x_delta {
 		var result = (math.Pow(a,math.Pow(x,2) - 1) - math.Log10(math.Pow(x,2) - 1) + math.Cbrt(math.Pow(x,2) - 1))
 		fmt.Println(result)
 	}
