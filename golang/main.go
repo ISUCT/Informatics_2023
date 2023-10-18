@@ -25,6 +25,4 @@ func main() {
 		var result = (math.Pow(a,math.Pow(values[i],2) - 1) - math.Log10(math.Pow(values[i],2) - 1) + math.Cbrt(math.Pow(values[i],2) - 1))
 		fmt.Println(result)
 	}
-
-
 }
