@@ -5,6 +5,10 @@ import (
 	"math"
 )
 
+func result(a float64, x float64) float64 {
+	return (math.Pow(a,math.Pow(x,2) - 1) - math.Log10(math.Pow(x,2) - 1) + math.Cbrt(math.Pow(x,2) - 1))
+}
+
 func main() {
 	fmt.Println("Кремнев Юрий Юрьевич")
 
@@ -15,14 +19,13 @@ func main() {
 	
 	fmt.Println("Решения задачи под А:")
 	for x := x_begin; x <= x_end; x += x_delta {
-		var result = (math.Pow(a,math.Pow(x,2) - 1) - math.Log10(math.Pow(x,2) - 1) + math.Cbrt(math.Pow(x,2) - 1))
-		fmt.Println(result)
+		fmt.Println(result(a,x))
 	}
 
 	fmt.Println("Решения задачи под В:")
 	var values = [5]float64{1.28, 1.36, 2.47, 3.68, 4.56}
 	for i := 0; i < 5; i++ {
-		var result = (math.Pow(a,math.Pow(values[i],2) - 1) - math.Log10(math.Pow(values[i],2) - 1) + math.Cbrt(math.Pow(values[i],2) - 1))
-		fmt.Println(result)
+		x := values[i]
+		fmt.Println(result(a,x))
 	}
 }
