@@ -6,7 +6,7 @@ import (
 )
 
 func radians(z float64) float64 {
-	return (z) * (math.Pi / 180.0)
+	return z * (math.Pi / 180.0)
 }
 
 func formula(x float64) float64 {
@@ -31,5 +31,4 @@ func main() {
 		x := list[i]
 		fmt.Println(formula(x))
 	}
-
 }
