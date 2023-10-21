@@ -5,6 +5,10 @@ import (
 	"math"
 )
 
+func primer(x float64, a float64, b float64) float64 {
+	return (a*math.Cbrt(x) - b*(math.Log10(x))/math.Log10(5)) / (math.Pow(math.Log10(x-1), 3))
+}
+
 func main() {
 
 	//Лабораторная работа 2
@@ -19,16 +23,15 @@ func main() {
 	x_begin := 1.5
 	x_end := 3.5
 	x_delta := 0.4
-	for x := x_begin; x <= x_end; x += x_delta {
-		var y1 = (a*math.Cbrt(x) - b*(math.Log10(x))/math.Log10(5)) / (math.Pow(math.Log10(x-1), 3))
-		fmt.Println(y1)
+	for n1 := x_begin; n1 <= x_end; n1 += x_delta {
+		fmt.Println(primer(n1, a, b))
 	}
 
 	//Решение под Б
 	fmt.Println("Решения под Б:")
 	var list = [5]float64{1.9, 2.15, 2.34, 2.74, 3.16}
-	for n := 0; n < 5; n++ {
-		var y2 = (a*math.Cbrt(list[n]) - b*(math.Log10(list[n]))/math.Log10(5)) / (math.Pow(math.Log10(list[n]-1), 3))
-		fmt.Println(y2)
+	for n2 := 0; n2 < len(list); n2++ {
+		c := list[n2]
+		fmt.Println(primer(c, a, b))
 	}
 }
