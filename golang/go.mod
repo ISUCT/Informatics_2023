@@ -1,4 +1,4 @@
-module isuct.ru/informatics2022
+module github.com/stretchr/testify
 
 go 1.20
 
