@@ -24,7 +24,7 @@ func main() {
 
 	fmt.Println("Решения задачи под В:")
 	var values = [5]float64{1.28, 1.36, 2.47, 3.68, 4.56}
-	for i := 0; i < 5; i++ {
+	for i := 0; i < len(values); i++ {
 		fmt.Println(result(a,values[i]))
 	}
 }
