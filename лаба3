@@ -1,0 +1,18 @@
+package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func main() {
+	a := 2.5
+	b := 4.6
+	x_n := 1.1
+	x_k := 3.6
+	x_z := 0.5
+	fmt.Println("Значение функции №18 при данных задачи А =")
+	for x := x_n; x <= x_k; x = x + x_z {
+		var y1 = (math.Pow((a + b*x), 2.5)) / (1 + (math.Log10(a + b*x)))
+		fmt.Println(y1)
+	}
