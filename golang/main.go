@@ -8,9 +8,8 @@ import (
 func primer(x float64, a float64, b float64) float64 {
 	return (a*math.Cbrt(x) - b*(math.Log10(x))/math.Log10(5)) / (math.Pow(math.Log10(x-1), 3))
 }
-
 func main() {
-	
+
 	//Лабораторная работа 2
 	fmt.Println("Chalunin Artem Romanovich")
 
