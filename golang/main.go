@@ -10,7 +10,7 @@ func primer(x float64, a float64, b float64) float64 {
 }
 
 func main() {
-
+	
 	//Лабораторная работа 2
 	fmt.Println("Chalunin Artem Romanovich")
 
