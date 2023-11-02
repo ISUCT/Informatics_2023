@@ -16,3 +16,12 @@ func main() {
 		var y1 = (math.Pow((a + b*x), 2.5)) / (1 + (math.Log10(a + b*x)))
 		fmt.Println(y1)
 	}
+var argument = [5]float64{x1, x2, x3, x4, x5} // Массив значений x1-5
+	fmt.Println("Значение функции №18 при данных задачи Б =")
+	for i := 0; i < 5; i++ {
+		var y2 = (math.Pow((a + b*x), 2.5)) / (1 + (math.Log10(a + b*x)))
+		fmt.Println(y2)
+	}
+	//// лаба 2
+	fmt.Println("Семенова Дарья Сергеевна")
+}
