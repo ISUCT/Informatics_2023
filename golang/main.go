@@ -6,8 +6,7 @@ import (
 )
 
 func form(x float64) float64 {
-	var a float64
-	a = 2.25
+	a := 2.25
 	return (math.Pow(a, (math.Pow(x, 2)-1)) - math.Log10(math.Pow(x, 2)-1) + math.Pow((math.Pow(x, 2)-1), (1/3)))
 }
 func main() {
