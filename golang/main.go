@@ -28,7 +28,7 @@ func main() {
 
 	//Решение под Б
 	fmt.Println("Решения под Б:")
-	var list = [5]float64{1.9, 2.15, 2.34, 2.74, 3.16}
+	list := [5]float64{1.9, 2.15, 2.34, 2.74, 3.16}
 	for n2 := 0; n2 < len(list); n2++ {
 		c := list[n2]
 		fmt.Println(primer(c, a, b))
