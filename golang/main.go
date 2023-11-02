@@ -15,9 +15,8 @@ func znachenie_funkcii(x float64) float64 {
 		y = math.Pow(1.2, x) - math.Pow(x, 1.2)
 	}
 	fmt.Println("При x = ", x, " y = ", y)
-	return 1
+	return 1.11111111
 }
-
 func main() {
 	fmt.Println("Задача A")
 	for i := 0.2; i <= 2.2; i += 0.4 {
@@ -30,5 +29,4 @@ func main() {
 		znachenie_funkcii(list_of_x[x])
 		x++
 	}
-
 }
