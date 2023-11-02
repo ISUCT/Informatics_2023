@@ -19,6 +19,5 @@ func main() {
 	var list_of_x [5]float64 = [5]float64{1.31, 1.39, 1.44, 1.56, 1.92}
 	for i := 0; i < 5; i++ {
 		fmt.Println("При x=", list_of_x[i], "y=", form(list_of_x[i]))
-
 	}
 }
