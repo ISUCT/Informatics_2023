@@ -6,7 +6,7 @@ import (
 )
 
 func formula(x float64) float64 {
-	return (math.Pow(1.6, (math.Pow(x, 2)-1)) - math.Log10(math.Pow(x, 2)-1) + math.Pow((math.Pow(x, 2)-1), (1/3)))
+	return (math.Pow(1.6, (math.Pow(x, 2)-1)) - math.Log10(math.Pow(x, 2)-1) + math.Cbrt((math.Pow(x, 2) - 1)))
 
 }
 
