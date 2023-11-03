@@ -12,7 +12,7 @@ func formula(x float64) float64 {
 
 func main() {
 	fmt.Println("Задача A")
-	for i := 1.2; i <= 3.7; i += 0.5 {
+	for i := 1.2; i <= 3.8; i += 0.5 {
 		fmt.Println("При x=", i, "y=", formula(i))
 	}
 	fmt.Println("Задача B")
