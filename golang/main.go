@@ -30,10 +30,8 @@ func task1(xn float64, xk float64) {
 }
 
 func task2() {
-
 	peremennie := [5]float64{x1, x2, x3, x4, x5}
 	fmt.Println(peremennie)
-
 	for _, xp := range peremennie {
 		x := (xp)
 		var y float64 = (math.Log10(math.Pow(x, 3)-1) / (math.Log2(a*math.Pow(x, 2)-b) / math.Log2(5)))
