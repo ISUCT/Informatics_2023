@@ -10,7 +10,7 @@ func Radians(deg float64) float64 {
 }
 
 func Calculate(x, a, b float64) float64 {
-	return (math.Pow(b, 3)+math.Pow(math.Sin(Radians(a*x)), 2))/math.Acos(x*b*x) + math.Pow(math.E, -x/2)
+	return (math.Pow(b, 3) + math.Pow(math.Sin(Radians(a*x)), 2)) / (math.Acos(x*b*x) + math.Pow(math.E, -x/2))
 }
 
 func main() {
