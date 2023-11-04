@@ -19,7 +19,6 @@ var x5 float64 = 4.52
 
 func task1(xn float64, xk float64) {
 	for {
-
 		var x float64 = xn
 		var y float64 = (math.Log10(math.Pow(x, 3)-1) / (math.Log2(a*math.Pow(x, 2)-b) / math.Log2(5)))
 		fmt.Println("ResultsOfTask1:" + fmt.Sprint(y))
@@ -27,7 +26,6 @@ func task1(xn float64, xk float64) {
 		if xn >= xk {
 			break
 		}
-
 	}
 }
 
@@ -41,7 +39,6 @@ func task2() {
 		var y float64 = (math.Log10(math.Pow(x, 3)-1) / (math.Log2(a*math.Pow(x, 2)-b) / math.Log2(5)))
 		fmt.Println("ResultsOfTask2:" + fmt.Sprint(y))
 	}
-
 }
 
 func main() {
