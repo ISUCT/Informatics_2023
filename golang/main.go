@@ -5,10 +5,6 @@ import (
 	"math"
 )
 
-func name() {
-	fmt.Println("Жуков Даниил Евгеньевич")
-}
-
 func Radians(deg float64) float64 {
 	return (deg) * (math.Pi / 180)
 }
@@ -28,6 +24,7 @@ func main() {
 		fmt.Println(Calculate(i, a, b))
 	}
 	var Xes = [5]float64{0.25, 0.36, 0.56, 0.94, 1.28}
+	fmt.Println("Задача B")
 	for i := 0; i < len(Xes); i++ {
 		fmt.Println(Calculate(Xes[i], a, b))
 	}
