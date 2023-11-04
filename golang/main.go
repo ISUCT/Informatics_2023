@@ -37,7 +37,7 @@ func task2() {
 	fmt.Println(peremennie)
 
 	for _, xp := range peremennie {
-		x := float64(xp)
+		x := (xp)
 		var y float64 = (math.Log10(math.Pow(x, 3)-1) / (math.Log2(a*math.Pow(x, 2)-b) / math.Log2(5)))
 		fmt.Println("ResultsOfTask2:" + fmt.Sprint(y))
 	}
