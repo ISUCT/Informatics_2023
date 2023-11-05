@@ -26,7 +26,7 @@ func taskB(x1 float64, x2 float64, x3 float64, x4 float64, x5 float64) {
 }
 
 func main() {
-	fmt.Print("Бусыгин Андрей Михайлович")
+	fmt.Println("Бусыгин Андрей Михайлович")
 	taskA(1.25, 3.25)
 	taskB(1.84, 2.71, 3.81, 4.56, 5.62)
 }
