@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	fmt.Println("Hello world")
 	a := 2.25
 	xn := 1.2
 	xk := 2.7
