@@ -19,10 +19,10 @@ func task1(x1 float64, x2 float64) {
 	fmt.Println(answersA)
 }
 
-func task2() {
+func task2(x1 float64,x2 float64,x3 float64,x4 float64,x5 float64) {
 	var a2 float64 = 1.2
 	var b2 float64 = 0.48
-	var znachX = []float64{0.25, 0.36, 0.56, 0.94, 1.28}
+	var znachX = []float64{x1, x2, x3, x4, x5}
 	var answersB = []float64{}
 	for i:=0; i < len(znachX); i++{
 		x := znachX[i]
@@ -34,5 +34,5 @@ func task2() {
 
 func main() {
 	task1(0.7, 2.2)
-	task2()
+	task2(0.25, 0.36, 0.56, 0.94, 1.28)
 }
