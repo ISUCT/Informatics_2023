@@ -26,7 +26,7 @@ func primer1(xn float64, xk float64) {
 func primer2() {
 	dannie := [5]float64{x1, x2, x3, x4, x5}
 	for _, xp := range dannie {
-		x := float64(xp)
+		x := xp
 		var y float64 = math.Pow((math.Pow(math.Asin(x), 2) + math.Pow(math.Acos(x), 4)), 3)
 		fmt.Println("Пример 2-ой:" + fmt.Sprint(y))
 	}
