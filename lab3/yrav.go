@@ -24,7 +24,7 @@ func result2(a float64, b float64, x float64) float64 {
 func main() {
 	fmt.Println("Журавлев Сергей Викторович")
 
-	a := -2.4
+	a := -2.5
 	b := 3.4
 	x_begin := 3.5
 	x_end := 6.5
