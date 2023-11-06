@@ -25,7 +25,6 @@ func main() {
 		x += deltax
 	}
 	values := []float64{x1, x2, x3, x4, x5}
-
 	for _, x := range values {
 		result := (1 + math.Pow(math.Log10(x/a), 2)) / (b - math.Pow(e, x/a))
 		formattedResult := fmt.Sprintf("%.3f", result)
