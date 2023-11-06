@@ -6,7 +6,6 @@ import (
 )
 
 func CalculateFunction(x float64) float64 {
-
 	arcsin := math.Asin(x)
 	arccos := math.Acos(x)
 	return math.Pow(
@@ -16,7 +15,7 @@ func CalculateFunction(x float64) float64 {
 }
 
 func CalculateFunctionInRanges(xStart, xEnd, xStep float64) []float64 {
-	results := make([]float64, 0, 0)
+	results := make([]float64, 0)
 	for x := xStart; x <= xEnd; x += xStep {
 		results = append(results, CalculateFunction(x))
 	}
