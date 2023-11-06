@@ -14,12 +14,10 @@ func main() {
 	for x := x_n; x <= x_k; x = x + x_z {
 		var ya = (math.Pow(math.Log10(a+x), 2) / math.Pow(a+x, 2))
 		fmt.Println("Результат задачи A =", ya)
-
 	}
 	var argument = [5]float64{1.16, 1.32, 1.47, 1.65, 1.93}
 	for z := 0; z < 5; z++ {
 		var yb = (math.Pow(math.Log10(a+argument[z]), 2) / math.Pow(a+argument[z], 2))
 		fmt.Println("Результат задачи B =", yb)
-
 	}
 }
