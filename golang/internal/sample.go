@@ -10,7 +10,7 @@ func Summ(a, b int) int {
 
 func Cycle(xn, xk, xd float64) []float64 {
 	var numbers_cycle = []float64{}
-	for i := xn; i <= xk; i = i + float64(xd) {
+	for i := xn; i <= xk; i = i + xd {
 		numbers_cycle = append(numbers_cycle, Func_resolution(i))
 	}
 	return numbers_cycle
