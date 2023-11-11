@@ -1,7 +1,6 @@
 package internal
 
 import (
-	"fmt"
 	"math"
 )
 
@@ -9,41 +8,29 @@ func Summ(a, b int) int {
 	return a + b
 }
 
-func Print_answer() {
+func Cycle(xn, xk, xd float64) []float64 {
 	var numbers_cycle = []float64{}
-	var numbers_massive = []float64{}
-	for i := 1.25; i <= 3.25; i = i + float64(0.4) {
+	for i := xn; i <= xk; i = i + float64(xd) {
 		numbers_cycle = append(numbers_cycle, Func_resolution(i))
 	}
-	var numbers [5]float64 = [5]float64{1.84, 2.71, 3.81, 4.56, 5.62}
-	for i := 0; i <= len(numbers)-1; i++ {
-		numbers_massive = append(numbers_massive, Func_resolution(numbers[i]))
+	return numbers_cycle
+}
+
+func Massive(numbers [5]float64) []float64 {
+	var numbers_massive = []float64{}
+	for _, val := range numbers {
+		numbers_massive = append(numbers_massive, Func_resolution(val))
 	}
-	fmt.Println(numbers_massive)
-	fmt.Println(numbers_cycle)
+	return numbers_massive
 }
 
 func Func_resolution(x float64) float64 {
-	square := square(x)
-
+	square := math.Pow(x, 2)
 	diff := square - 2.5
-
 	mod := math.Abs(diff)
-
-	root4 := math.Pow(mod, root_nth_degree(4))
-
+	root4 := math.Pow(mod, float64(1)/float64(4))
 	nat_log := math.Log(square)
-
-	root3 := math.Pow(nat_log, root_nth_degree(3))
-
+	root3 := math.Pow(nat_log, float64(1)/float64(3))
 	y := root4 + root3
-
 	return y
-}
-
-func square(x float64) float64 {
-	return x * x
-}
-func root_nth_degree(degree float64) float64 {
-	return 1 / degree
 }
