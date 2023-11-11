@@ -5,7 +5,7 @@ import (
 	"math"
 )
 
-func nmob2() {
+func nmob() {
 
 	a := 2.0
 	b := 1.1
@@ -23,10 +23,14 @@ func nmob2() {
 		fmt.Println(y1)
 		break
 	}
+}
 
+func nmob1() {
+	a := 2.0
+	b := 1.1
+	fmt.Println("")
 	fmt.Println("Znachenie func №16 pri dannix B")
 	var argument = [5]float64{0.1, 0.3, 0.4, 0.45, 0.65}
-	fmt.Println("")
 	for i := 0; i < 5; i++ {
 		// ln(a) | b2 - x2 |
 		var1 := math.Log(a) * math.Abs(b*b-argument[i]*argument[i])
@@ -37,5 +41,11 @@ func nmob2() {
 		fmt.Println(y2)
 		break
 	}
+}
 
+func main() {
+	nmob()
+	nmob1()
+	fmt.Println("")
+	fmt.Println("Funcia reshena")
 }
