@@ -5,10 +5,9 @@ import (
 	"math"
 )
 
-func task1(x1 float64, x2 float64) {
+func task1(x1 float64, x2 float64, deltax float64) {
 	var a1 float64 = 7.2
 	var b1 float64 = 4.2
-	var deltax float64 = 0.7
 	var answersA = []float64{}
 	for x := x1; x <= x2; x += deltax {
 		var y float64 = math.Sqrt((math.Abs(a1 - b1*x)) / (math.Pow(math.Log10(x), 3)))
@@ -32,6 +31,6 @@ func task2(x1 float64, x2 float64, x3 float64, x4 float64, x5 float64) {
 
 func main() {
 	fmt.Println("Kochetkov Kirill")
-	task1(1.81, 5.31)
+	task1(1.81, 5.31, 0.7)
 	task2(2.4, 2.8, 3.9, 4.7, 3.16)
 }
