@@ -6,9 +6,7 @@ import (
 )
 
 func formula(x float64) float64 {
-	var result float64
-	result = math.Asin(math.Pow(x, 2)) + math.Asin(math.Pow(x, 3))
-	return result
+	return math.Asin(math.Pow(x, 2)) + math.Asin(math.Pow(x, 3))
 }
 
 func main() {
