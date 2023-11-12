@@ -23,7 +23,5 @@ sinCubed := math.Pow(math.Sin(x), 3)
 cosCubed := math.Pow(math.Cos(x), 3)
 lnX := math.Log(x)
 
-y := (sinCubed + cosCubed) * lnX
-
-return y
+return (sinCubed + cosCubed) * lnX
 }
