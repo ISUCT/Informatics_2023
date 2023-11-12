@@ -6,7 +6,7 @@ import (
 )
 
 func result(a float64, b float64, x float64) float64 {
-	return ((math.Cbrt(a*x-b)) / (math.Pow(math.Log(10, x), 2)))
+	return ((math.Cbrt(a*x-b)) / (math.Pow(math.Log10(x), 2)))
 }
 
 func main() {
