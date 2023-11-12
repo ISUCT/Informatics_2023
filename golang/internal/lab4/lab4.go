@@ -13,8 +13,9 @@ func Calculate(x float64, b float64) float64 {
 }
 
 func TaskA(begX, finX, detX, b float64) ([]float64, []float64) {
-	var yList = make([]float64, 0, int(math.Ceil((finX-begX)/detX+1)))
-	var corrXList = make([]float64, 0)
+	var predeterminedCap int = int(math.Ceil((finX-begX)/detX + 1))
+	var yList = make([]float64, 0, predeterminedCap)
+	var corrXList = make([]float64, 0, predeterminedCap)
 	for i := begX; i <= finX; i += detX {
 		yList = append(yList, Calculate(i, b))
 		corrXList = append(corrXList, i)
