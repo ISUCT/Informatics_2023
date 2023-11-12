@@ -2,32 +2,28 @@ package main
 
 import (
 	"fmt"
-	"math"
+
+	"isuct.ru/informatics2022/internal/lab4"
 )
 
-func ToRadians(deg float64) float64 {
-	return (deg) * (math.Pi / 180.0)
-}
-
-func Calculate(x float64, b float64) float64 {
-	return (1 + math.Pow(math.Sin(ToRadians(math.Pow(b, 3)+math.Pow(x, 3))), 2)) / math.Cbrt(math.Pow(b, 3)+math.Pow(x, 3))
+func PrintResult(xL []float64, yL []float64) {
+	for i := range yL {
+		fmt.Printf("x = %.2f, y = %f\n", xL[i], yL[i])
+	}
 }
 
 func main() {
-	fmt.Println("Аксенов Иван Дмитриевич")
-	
 	var b = 2.5
 	var begX = 1.28
 	var finX = 3.28
 	var detX = 0.4
 
-	for i := begX; i <= finX; i += detX {
-		fmt.Println(Calculate(i, b))
-	}
+	var yList, corrXList = lab4.TaskA(begX, finX, detX, b)
+	PrintResult(corrXList, yList)
 
-	var xList = [5]float64{1.1, 2.4, 3.6, 1.7, 3.9}
+	var xList = []float64{1.1, 2.4, 3.6, 1.7, 3.9}
 
-	for i := 0; i < len(xList); i++ {
-		fmt.Println(Calculate(xList[i], b))
-	}
+	yList = lab4.TaskB(xList, b)
+	PrintResult(xList, yList)
+
 }
