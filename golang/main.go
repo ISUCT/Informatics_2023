@@ -14,7 +14,6 @@ func main() {
 	fmt.Println("Chalunin Artem Romanovich")
 
 	//Лабораторная работа номер 3 - варинант 23
-
 	//Решение под А
 	fmt.Println("Решения под A:")
 	a := 4.1
