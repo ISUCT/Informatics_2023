@@ -26,5 +26,4 @@ func main() {
 
 	yList = lab4.TaskB(xList, b)
 	PrintResult(xList, yList)
-
 }
