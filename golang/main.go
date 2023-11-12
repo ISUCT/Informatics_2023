@@ -13,6 +13,7 @@ func PrintResult(xL []float64, yL []float64) {
 }
 
 func main() {
+	fmt.Println("Аксенов Иван Дмитриевич")
 	var b = 2.5
 	var begX = 1.28
 	var finX = 3.28
