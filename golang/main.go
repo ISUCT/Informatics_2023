@@ -33,5 +33,4 @@ func main() {
 		c := arguments[n]
 		fmt.Println(zadacha(c, a, b))
 	}
-
 }
