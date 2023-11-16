@@ -2,23 +2,23 @@ package main
 
 import (
 	"fmt"
-	"math"
+
+	lab4 "command-line-argumentsC:\\Users\\dmitr\\Desktop\\репризиторий\\Informatics_2023\\golang\\internal\\lab 4\\calculate.go"
+	lab4 "isuct.ru/informatics2022/internal/lab 4"
 )
 
-func formula(x float64) float64 {
-	return (math.Pow(1.6, (math.Pow(x, 2)-1)) - math.Log10(math.Pow(x, 2)-1) + math.Cbrt((math.Pow(x, 2) - 1)))
-
-}
-
+// вариант 12
 func main() {
+	var a float64 = 1.6
 	fmt.Println("Задача A")
-	for i := 1.2; i <= 3.7; i += 0.5 {
-		fmt.Println("При x=", i, "y=", formula(i))
+	x, y := lab4.TuskA(a, 1.2, 3.7, 0.5)
+	for i, _ := range y {
+		fmt.Println("При x=", x[i], "y=", y[i])
 	}
 	fmt.Println("Задача B")
 	var listik [5]float64 = [5]float64{1.28, 1.36, 2.47, 3.68, 4.56}
-	for i := 0; i < 5; i++ {
-		fmt.Println("При x=", listik[i], "y=", formula(listik[i]))
-
+	x, y = lab4.TuskB(a, listik)
+	for i, _ := range y {
+		fmt.Println("При x=", x[i], "y=", y[i])
 	}
 }
