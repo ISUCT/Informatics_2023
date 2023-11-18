@@ -27,7 +27,5 @@ func Task_B(xs []float64) []float64 {
 }
 
 func function(x float64) float64 {
-	const a float64 = 4.1
-	const b float64 = 2.7
-	return ((a * math.Sqrt(x)) - (b * log5(x))) / (math.Log10(math.Abs(x - 1)))
+	return ((4.1 * math.Sqrt(x)) - (2.7 * log5(x))) / (math.Log10(math.Abs(x - 1)))
 }
