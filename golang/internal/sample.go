@@ -16,7 +16,7 @@ func func_res(x float64) float64 {
 }
 
 func Task_A(x_start, x_end, x_step float64) []float64 {
-	var answer_a = []float64{}
+	answer_a := make([]float64, 0, 6)
 	for i := x_start; i <= x_end; i += x_step {
 		answer_a = append(answer_a, func_res(i))
 	}
@@ -24,7 +24,7 @@ func Task_A(x_start, x_end, x_step float64) []float64 {
 }
 
 func Task_B(y []float64) []float64 {
-	var answer_b = []float64{}
+	answer_b := make([]float64, 0, 5)
 	for _, i := range y {
 		answer_b = append(answer_b, func_res(i))
 	}
