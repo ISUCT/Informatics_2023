@@ -16,16 +16,18 @@ func func_res(x float64) float64 {
 }
 
 func Task_A(x_start, x_end, x_step float64) []float64 {
-	answer_a := make([]float64, 0, 6)
+	var capacity float64 = (x_end - x_start) / x_step
+	var capacity_int int = int(capacity)
+	answer_a := make([]float64, 0, capacity_int)
 	for i := x_start; i <= x_end; i += x_step {
 		answer_a = append(answer_a, func_res(i))
 	}
 	return answer_a
 }
 
-func Task_B(y []float64) []float64 {
-	answer_b := make([]float64, 0, 5)
-	for _, i := range y {
+func Task_B(slice_of_x_values []float64) []float64 {
+	answer_b := make([]float64, 0, len(slice_of_x_values))
+	for _, i := range slice_of_x_values {
 		answer_b = append(answer_b, func_res(i))
 	}
 	return answer_b
