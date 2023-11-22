@@ -11,24 +11,24 @@ func Summ(a, b int) int {
 func Cycle(xn, xk, xd float64) []float64 {
 	var numbers_cycle = []float64{}
 	for i := xn; i <= xk; i = i + xd {
-		numbers_cycle = append(numbers_cycle, Func_resolution(i))
+		numbers_cycle = append(numbers_cycle, FuncResolution(i))
 	}
 	return numbers_cycle
 }
 
-func Massive(numbers [5]float64) []float64 {
-	var numbers_massive = []float64{}
+func Massive(numbers []float64) []float64 {
+	var numbers_massive = make([]float64, 0, len(numbers))
 	for _, val := range numbers {
-		numbers_massive = append(numbers_massive, Func_resolution(val))
+		numbers_massive = append(numbers_massive, FuncResolution(val))
 	}
 	return numbers_massive
 }
 
-func Func_resolution(x float64) float64 {
+func FuncResolution(x float64) float64 {
 	square := math.Pow(x, 2)
 	diff := square - 2.5
 	mod := math.Abs(diff)
-	root4 := math.Pow(mod, float64(1)/float64(4))
+	root4 := math.Pow(mod, 1.0/4.0)
 	nat_log := math.Log(square)
 	root3 := math.Pow(nat_log, float64(1)/float64(3))
 	y := root4 + root3
