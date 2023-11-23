@@ -2,12 +2,9 @@ package main
 
 import (
 	"fmt"
-	"math"
-)
 
-func zadacha(x float64, a float64, b float64) float64 {
-	return (math.Sqrt((math.Abs(a - b*x)) / (math.Pow(math.Log10(x), 3))))
-}
+	"isuct.ru/informatics2022/internal/lab4"
+)
 
 func main() {
 	//Лабораторная 2
@@ -22,15 +19,9 @@ func main() {
 	xEnd := 5.31
 	xDelta := 0.7
 	fmt.Println("Решения под A:")
-	for y := xBegin; y <= xEnd; y = y + xDelta {
-		fmt.Println(zadacha(y, a, b))
-	}
+	fmt.Println(lab4.TaskA(xBegin, xEnd, xDelta, a, b))
 
 	//Решение под Б
 	fmt.Println("Решения под B:")
-	var arguments = [5]float64{2.4, 2.8, 3.9, 4.7, 3.16}
-	for n := 0; n < len(arguments); n++ {
-		c := arguments[n]
-		fmt.Println(zadacha(c, a, b))
-	}
+	fmt.Println(lab4.TaskB([]float64{2.4, 2.8, 3.9, 4.7, 3.16}, a, b))
 }
