@@ -20,8 +20,7 @@ func main() {
 
 	fmt.Println("Task B")
 	var xB = []float64{0.1, 0.9, 1.2, 1.5, 2.3}
-	var yB []float64
-	yB = lab4.TaskB(xB)
+	yB := lab4.TaskB(xB)
 	var j int
 	for j < len(xB) {
 		fmt.Println("При x = ", xB[j], ", y = ", yB[j])
