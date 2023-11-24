@@ -11,7 +11,7 @@ func log5(x float64) float64 {
 }
 
 func Task_A(x_start, x_end, x_delta float64) []float64 {
-	var otvet_a = []float64{}
+	var otvet_a = make([]float64, 0, 6)
 	for i := x_start; i <= x_end; i += x_delta {
 		otvet_a = append(otvet_a, function(i))
 	}
@@ -19,7 +19,7 @@ func Task_A(x_start, x_end, x_delta float64) []float64 {
 }
 
 func Task_B(xs []float64) []float64 {
-	var otvet_b = []float64{}
+	var otvet_b = make([]float64, 0, 5)
 	for _, i := range xs {
 		otvet_b = append(otvet_b, function(i))
 	}
