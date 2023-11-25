@@ -2,25 +2,18 @@ package main
 
 import (
 	"fmt"
-	"math"
+
+	"isuct.ru/informatics2022/internal/lab4"
 )
 
-func ToRadians(deg float64) float64 {
-	return (deg) * (math.Pi / 180.0)
-}
-
-func Calculate(a float64, b float64, x float64) float64 {
-	var exp float64
-	if x < 5 {
-		exp = math.Pow(math.Log10(math.Pow(a, 2)+x), 2) / math.Pow(a+x, 2)
-	} else {
-		exp = math.Pow(a+b*x, 2.5) / (1.8 + math.Pow(math.Cos(ToRadians(a*x)), 3))
+func prnt(ylist, xlist []float64) {
+	for i, v := range ylist {
+		fmt.Printf("x = %f  y = %f\n", xlist[i], v)
 	}
-
-	return exp
 }
 
 func main() {
+
 	fmt.Println("Горюнов Александр Алексеевич")
 
 	var a = -2.5
@@ -29,13 +22,9 @@ func main() {
 	var endX = 6.5
 	var detX = 0.6
 
-	for x := begX; x <= endX; x += detX {
-		fmt.Println(Calculate(a, b, x))
-	}
+	prnt(lab4.TaskA(a, b, begX, endX, detX))
 
-	var xList = []float64{2.89, 3, 54, 5.21, 6.28, 3.48}
+	var xList = []float64{2.89, 3.54, 5.21, 6.28, 3.48}
 
-	for i := 0; i < len(xList); i++ {
-		fmt.Println(Calculate(a, b, xList[i]))
-	}
+	prnt(lab4.TaskB(xList, a, b), xList)
 }
