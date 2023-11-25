@@ -13,7 +13,6 @@ func prnt(ylist, xlist []float64) {
 }
 
 func main() {
-
 	fmt.Println("Горюнов Александр Алексеевич")
 
 	var a = -2.5

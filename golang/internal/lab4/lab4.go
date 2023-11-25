@@ -17,7 +17,6 @@ func calculate(a float64, b float64, x float64) float64 {
 }
 
 func TaskA(a, b, begX, endX, detX float64) ([]float64, []float64) {
-
 	var predX = int(math.Ceil((endX-begX)/detX + 1))
 	var ylist = make([]float64, 0, predX)
 	var xlist = make([]float64, 0, predX)
@@ -29,7 +28,6 @@ func TaskA(a, b, begX, endX, detX float64) ([]float64, []float64) {
 }
 
 func TaskB(xlist []float64, a, b float64) []float64 {
-
 	var ylist = make([]float64, 0, len(xlist))
 	for i := 0; i < len(xlist); i++ {
 		ylist = append(ylist, calculate(a, b, xlist[i]))
