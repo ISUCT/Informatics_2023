@@ -1,7 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"isuct.ru/informatics2022/internal"
+)
 
 func main() {
-	fmt.Println("Hello world")
+	fmt.Println(internal.SolveA(1.1, 0.09))
+	fmt.Println(internal.SolveB([]float64{4.48, 3.56, 2.78, 5.28, 3.21}))
 }
