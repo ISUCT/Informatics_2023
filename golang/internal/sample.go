@@ -1,6 +1,7 @@
 package internal
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -31,4 +32,25 @@ func Task_B(slice_of_x_values []float64) []float64 {
 		answer_b = append(answer_b, func_res(i))
 	}
 	return answer_b
+}
+
+// Задание на структуры
+type Cat struct {
+	Age  int
+	Sex  string
+	Name string
+}
+
+func (cat *Cat) GetAge() int {
+	return cat.Age
+}
+
+func (cat *Cat) SetAge(age int) {
+	cat.Age = age
+}
+
+func (cat *Cat) PrintAllProperty() {
+	fmt.Println("Имя:", cat.Name)
+	fmt.Println("Возраст:", cat.Age)
+	fmt.Println("Пол:", cat.Sex)
 }
