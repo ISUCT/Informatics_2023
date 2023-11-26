@@ -7,12 +7,12 @@ import (
 const a = 0.8
 const b = 0.4
 
-func Summ(a, b int) int {
+func Summ(a, b float64) float64 {
 	return a + b
 }
 
 func Cycle(x_begin, x_end, x_step float64) []float64 {
-	var slice = []float64{}
+	var slice = make([]float64, 0, int64((x_end-x_begin)/x_step+1))
 	for x := x_begin; x <= x_end; x += x_step {
 		slice = append(slice, problem_1(a, b, x))
 	}
