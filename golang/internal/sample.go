@@ -5,6 +5,10 @@ import (
 	"math"
 )
 
+func Summ(a, b int) int {
+	return a + b
+}
+
 const a = 1.1
 const b = 0.09
 
