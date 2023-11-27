@@ -18,8 +18,8 @@ func taskA(a, x_begin, x_end, x_delta float64) []float64 {
 }
 
 func taskB(a float64, values []float64) []float64 {
-  	y := make([]float64, 0, len(values))
-  	for _, x := range values {
+	y := make([]float64, 0, len(values))
+	for _, x := range values {
     	y = append(y, result(a, x))
   	}
   	return y
