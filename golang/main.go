@@ -14,8 +14,8 @@ func main() {
 
 	for _, f := range funcs {
 		f()
-	}
 
+	}
 }
 
 func zadacha_A() {
