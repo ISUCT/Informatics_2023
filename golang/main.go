@@ -6,15 +6,12 @@ import (
 )
 
 func main() {
-
 	funcs := []func(){
 		zadacha_A,
 		zadacha_B,
 	}
-
 	for _, f := range funcs {
 		f()
-
 	}
 }
 
