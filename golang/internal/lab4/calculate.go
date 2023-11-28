@@ -7,8 +7,8 @@ func Formula(consta, x float64) float64 {
 }
 
 func TaskA(consta, start, end, step float64) ([]float64, []float64) {
-	y := make([]float64, 0, 5)
-	x := make([]float64, 0, 5)
+	y := make([]float64, 0, 6)
+	x := make([]float64, 0, 6)
 	for i := start; i <= end; i += step {
 		y = append(y, Formula(consta, i))
 		x = append(x, i)
