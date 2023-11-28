@@ -7,7 +7,7 @@ func formula(x float64) float64 {
 }
 
 func TaskA(xn, xk, dx float64) []float64 {
-	y := make([]float64, 0, 5)
+	y := make([]float64, 0, 6)
 	for i := xn; i <= xk; i += dx {
 		y = append(y, formula(i))
 	}
