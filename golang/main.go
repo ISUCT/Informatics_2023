@@ -32,5 +32,5 @@ func task2(a float64, b float64, x1 float64, x2 float64, x3 float64, x4 float64,
 func main() {
 	task1(4.1, 2.7, 1.2, 5.2, 0.7)
 	task2(4.1, 2.7, 1.9, 2.15, 2.34, 2.73, 3.16)
-	fmt.Println("Hello world")
+	fmt.Println("Полина Костина")
 }
