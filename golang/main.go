@@ -2,15 +2,21 @@ package main
 
 import (
 	"fmt"
-	"math"
+	"log"
+
+	"isuct.ru/informatics2022/internal/catstruct"
+	"isuct.ru/informatics2022/internal/lab4"
 )
 
-func ToRadians(deg float64) float64 {
-	return (deg) * (math.Pi / 180.0)
+func checkForError(e error) {
+	if e != nil {
+		log.Fatal("Error free")
+	}
 }
-
-func task(x float64, b float64) float64 {
-	return (1 + math.Pow(math.Sin(ToRadians(math.Pow(b, 3)+math.Pow(x, 3))), 2)) / math.Cbrt(math.Pow(b, 3)+math.Pow(x, 3))
+func rez(x, y []float64) {
+	for i, v := range y {
+		fmt.Printf("x = %f | y = %f \n", x[i], v)
+	}
 }
 
 func main() {
@@ -20,13 +26,21 @@ func main() {
 	var finX = 3.28
 	var detX = 0.4
 
-	for i := begX; i < finX; i += detX {
-		fmt.Println(task(i, b))
-	}
+	var ifeal, fink = lab4.TaskA(begX, finX, detX, b)
+	rez(fink, ifeal)
 
-	var xList = [5]float64{1.1, 2.4, 3.6, 1.7, 3.9}
+	var xList = []float64{1.1, 2.4, 3.6, 1.7, 3.9}
 
-	for i := 0; i < len(xList); i++ {
-		fmt.Println(task(xList[i], b))
-	}
+	ifeal = lab4.TaskB(xList, b)
+	rez(xList, ifeal)
+	var cat = catstruct.NewCat(3, "Jack", "black and white")
+
+	var err error = cat.SetAge(5)
+	checkForError(err)
+
+	cat.SetName("Tom")
+
+	fmt.Printf("Cat's age is %d\n", cat.GetAge())
+	fmt.Printf("Its name is %s\n", cat.GetName())
+	fmt.Printf("Its color is %s\n", cat.GetColor())
 }
