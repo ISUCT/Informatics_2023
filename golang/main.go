@@ -30,6 +30,7 @@ func main() {
 	//task2
 	mySliceForTask2 := []float64{1.21, 1.76, 2.53, 3.48, 4.52}
 	fmt.Println("AnswerOnTask2:")
+	fmt.Println(mySliceForTask2)
 	for _, xp := range mySliceForTask2 {
 		x := (xp)
 		fmt.Println(task2(mySliceForTask2, a, b, x))
