@@ -7,12 +7,12 @@ import (
 
 const b = 2.5
 
-func funktion1(c float64) float64 {
+func fnk1(c float64) float64 {
 	result := 1 + math.Sin(b*b*b+c*c*c)*math.Sin(b*b*b+c*c*c)/math.Cbrt(b*b*b+c*c*c)
 	return result
 }
 
-func main() {
+func fnk2() {
 	fmt.Println("1  Вариант")
 	fmt.Println("Задача А")
 	for x := 1.28; x <= 3.28; x += 0.4 {
