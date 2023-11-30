@@ -5,7 +5,7 @@ import "fmt"
 
 func main() {
 	fmt.Println("Вераксо Марк Владимирович 1/280")
-	fmt.Println(internal.1chast)
-	ДОДЕЛАТЬ
+	fmt.Println(internal.fnk1)
+	fmt.Println(internal.fnk2)
 	
 }
