@@ -9,20 +9,20 @@ func f(x float64) float64 {
 }
 
 func TaskA(xn, xk, dx float64) ([]float64, []float64){
-	x:=[]float64
-	y:=[]float64
+	x:=[]float64{}
+	y:=[]float64{}
 	for i:=xn; i <= xk; i += dx{
-		x = appennd(x, i)
-		y = appennd(y, f(i))
+		x = append(x, i)
+		y = append(y, f(i))
 	}
 	return x,y
 }
 func TaskB(array []float64) ([]float64, []float64){
-	x:=[]float64
-	y:=[]float64
+	x:=[]float64{}
+	y:=[]float64{}
 	for _, i := range array{
-		x = appennd(x, i)
-		y = appennd(y, f(i))
+		x = append(x, i)
+		y = append(y, f(i))
 	}
 	return x,y
 }
