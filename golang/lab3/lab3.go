@@ -11,7 +11,7 @@ func result(a, x float64) float64 {
 
 func taskA(a, x_begin, x_end, x_delta float64) []float64 {
 	y := make([]float64, 0, int((x_end - x_begin) / x_delta))
-  	for x := x_begin; x <= x_end; x += x_delta {
+	for x := x_begin; x <= x_end; x += x_delta {
     	y = append(y, result(a, x))
   	}
   	return y
