@@ -4,34 +4,34 @@ import (
 	"fmt"
 )
 
-type cat struct {
-	age int
-	name string
-	breed string
+type city struct {
+	population int
+	country string
 }
 
-func (c cat) GetAge() int {
-	return c.age
+func (c city) GetPopulation() int {
+	return c.population
 }
 
-func NewCat(setAge int, setName, setBreed string) cat {
-	return cat{
-		age: setAge,
-		name: setName,
-		breed: setBreed,
+func NewCity(setPopulation int, setCountry string) city {
+	return city{
+		population: setPopulation,
+		country: setCountry
 	}
 }
 
-func (c *cat) SetAge(age int) error {
-	if age >= 0 && age <= 25 {
-		c.age = age
+func (c *city) SetPopulation(population int) error {
+	if population >= 0 && population <= 400 {
+		c.population = population
 		return nil
 	}
-	return fmt.Errorf("Invalid cat age")
+	return fmt.Errorf("Invalid city population")
 }
 
-func (c cat) GetBreed() string {
-	return c.breed
+func (c city) GetCountry() string {
+	return c.country
 }
 
-func 
+func (c city) GetTheCity() {
+	fmt.Println("Welcome!")
+}
