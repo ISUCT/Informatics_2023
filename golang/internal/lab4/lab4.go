@@ -29,8 +29,8 @@ func TaskA(a, b, begX, endX, detX float64) ([]float64, []float64) {
 
 func TaskB(xlist []float64, a, b float64) []float64 {
 	var ylist = make([]float64, 0, len(xlist))
-	for i := 0; i < len(xlist); i++ {
-		ylist = append(ylist, calculate(a, b, xlist[i]))
+	for _, v := range xlist {
+		ylist = append(ylist, calculate(a, b, v))
 	}
 	return ylist
 }
