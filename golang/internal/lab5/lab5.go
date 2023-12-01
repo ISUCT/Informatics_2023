@@ -6,7 +6,7 @@ import (
 
 type city struct {
 	population int
-	country string
+	country    string
 }
 
 func (c city) GetPopulation() int {
@@ -16,8 +16,12 @@ func (c city) GetPopulation() int {
 func NewCity(setPopulation int, setCountry string) city {
 	return city{
 		population: setPopulation,
-		country: setCountry
+		country:    setCountry,
 	}
+}
+
+func (c *city) SetCountry(country string) {
+	c.country = country
 }
 
 func (c *city) SetPopulation(population int) error {
@@ -25,13 +29,13 @@ func (c *city) SetPopulation(population int) error {
 		c.population = population
 		return nil
 	}
-	return fmt.Errorf("Invalid city population")
+	return fmt.Errorf("invalid city population")
 }
 
 func (c city) GetCountry() string {
 	return c.country
 }
 
-func (c city) GetTheCity() {
+func (c *city) GetTheCity() {
 	fmt.Println("Welcome!")
 }
