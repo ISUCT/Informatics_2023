@@ -2,30 +2,35 @@ package main
 
 import (
 	"fmt"
-	"math"
+	"log"
+
+	dishstruct "isuct.ru/informatics2022/internal/dishStruct"
+	"isuct.ru/informatics2022/internal/lab4"
 )
 
-func task1(a float64, b float64, x1 float64, x2 float64, deltax float64) []float64 {
-	answersA := make([]float64, 0, 10)
-	for x := x1; x <= x2; x += deltax {
-		var y float64 = math.Sqrt((math.Abs(a - b*x)) / (math.Pow(math.Log10(x), 3)))
-		answersA = append(answersA, y)
+func checkForError(err error) {
+	if err != nil {
+		log.Fatal("Card declined")
 	}
-	return answersA
-}
-func task2(a float64, b float64, xValues []float64) []float64 {
-	answersB := make([]float64, 0, 10)
-	for _, x := range xValues {
-		var y float64 = math.Sqrt((math.Abs(a - b*x)) / (math.Pow(math.Log10(x), 3)))
-		answersB = append(answersB, y)
-	}
-	return answersB
 }
 
 func main() {
 	fmt.Println("Kochetkov Kirill")
-	results1 := task1(7.2, 4.2, 1.81, 5.31, 0.7)
-	fmt.Println(results1)
-	results2 := task2(7.2, 4.2, []float64{2.4, 2.8, 3.9, 4.7, 3.16})
-	fmt.Println(results2)
+
+	res1 := lab4.Task1(7.2, 4.2, 1.81, 5.31, 0.7)
+	fmt.Println(res1)
+
+	res2 := lab4.Task2(7.2, 4.2, []float64{2.4, 2.8, 3.9, 4.7, 3.16})
+	fmt.Println(res2)
+
+	dish := dishstruct.NewDish(5000, "soup", "Borsch")
+
+	var err error = dish.SetPrice(4999)
+	checkForError(err)
+
+	dish.SetName("Sorrel")
+
+	fmt.Printf("Your dish's price is %d\n", dish.GetPrice())
+	fmt.Printf("Its type is %s\n", dish.GetVid())
+	dish.TipTheWaiter()
 }
