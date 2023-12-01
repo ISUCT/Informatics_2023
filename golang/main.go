@@ -2,16 +2,9 @@ package main
 
 import (
 	"fmt"
-	"math"
+
+	lab4test "isuct.ru/informatics2022/internal"
 )
-
-func task1(a float64, b float64, x float64) float64 {
-	return (math.Log10(math.Pow(x, 3)-1) / (math.Log2(a*math.Pow(x, 2)-b) / math.Log2(5)))
-}
-
-func task2(_ []float64, a float64, b float64, x float64) float64 {
-	return (math.Log10(math.Pow(x, 3)-1) / (math.Log2(a*math.Pow(x, 2)-b) / math.Log2(5)))
-}
 
 func main() {
 	fmt.Println("Жуков Михаил Андреевич")
@@ -25,7 +18,7 @@ func main() {
 	var xk float64 = 2.2
 	fmt.Println("AnswerOnTask1:")
 	for x := xn; x <= xk; x += deltaX {
-		fmt.Println(task1(a, b, x))
+		fmt.Println(lab4test.Task1(a, b, x))
 	}
 	//task2
 	mySliceForTask2 := []float64{1.21, 1.76, 2.53, 3.48, 4.52}
@@ -33,6 +26,6 @@ func main() {
 	fmt.Println(mySliceForTask2)
 	for _, xp := range mySliceForTask2 {
 		x := (xp)
-		fmt.Println(task2(mySliceForTask2, a, b, x))
+		fmt.Println(lab4test.Task2(mySliceForTask2, a, b, x))
 	}
 }
