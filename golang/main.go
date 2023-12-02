@@ -12,7 +12,9 @@ func main() {
 	xNach := 3.5
 	xKon := 6.5
 	shag := 0.6
-	x, y := lab4.TaskA(xNach, xKon, shag)
+	a := -2.5
+	b := 3.4
+	x, y := lab4.TaskA(xNach, xKon, shag, a, b)
 	for i := range y {
 		fmt.Println("При x=", x[i], "y=", y[i])
 	}
