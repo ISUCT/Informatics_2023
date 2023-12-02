@@ -40,7 +40,7 @@ func main() {
 
 	cat, err := catStruct.NewCat(6, "Tiger", "Siamese")
 	checkForError(err)
-	anotherCat, err := catStruct.NewCat(-1, "No name", "unknown")
+	anotherCat, err := catStruct.NewCat(9, "No name", "unknown")
 	checkForError(err)
 
 	cat.SetAge(3)
