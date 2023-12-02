@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"isuct.ru/informatics2022/internal/lab4"
-	"isuct.ru/informatics2022/internal/lab5"
 )
 
 func main() {
@@ -22,12 +21,4 @@ func main() {
 
 	fmt.Println(lab4.Task_A(x_beg, x_end, x_stp, a, b))
 	fmt.Println(lab4.Task_B(xList, a, b))
-
-	fmt.Println("Lab 5")
-
-	var table = lab5.The_Table(2.55, 1.34, 0.96)
-
-	fmt.Printf("Table lenght is %f\n", table.GetLenght())
-	fmt.Printf("Table widht is %f\n", table.GetWidht())
-	fmt.Printf("Table height is %f\n", table.GetHeight())
 }
