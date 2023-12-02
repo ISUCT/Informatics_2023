@@ -22,4 +22,5 @@ func main() {
 	//TASK 2
 	var xList = []float64{0.2, 0.3, 0.38, 0.43, 0.57}
 
-	prnt(lab4.TaskB(xList)xList)
+	prnt(lab4.TaskB(xList), xList)
+}

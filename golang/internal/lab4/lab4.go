@@ -22,7 +22,6 @@ func TaskA(begX, endX, detX float64) ([]float64, []float64) {
 		xList = append(xList, x)
 	}
 	return yList, xList
-
 }
 
 //TASK 2
