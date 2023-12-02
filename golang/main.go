@@ -2,17 +2,10 @@ package main
 
 import (
 	"fmt"
-	"log"
 
 	"isuct.ru/informatics2022/internal/lab4"
 	structcat "isuct.ru/informatics2022/internal/structCat"
 )
-
-func checkError(er error) {
-	if er != nil {
-		log.Fatal("let's continue")
-	}
-}
 
 func main() {
 	//Лабораторная работа 2
@@ -38,11 +31,8 @@ func main() {
 	cat := structcat.NewCat(7, "Male", "British longhair", "Sky")
 
 	fmt.Println(cat)
-
-	var er error = cat.AssignAge(7)
-	checkError(er)
-
 	cat.AssignBreed("Burmese cat")
+	cat.AssignAge(10)
 
 	fmt.Printf("It's your cat name %s\n", cat.GetName())
 	fmt.Printf("Your cat is %d\n", cat.GetAge())
