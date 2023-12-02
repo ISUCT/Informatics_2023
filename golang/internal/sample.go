@@ -36,16 +36,16 @@ func Task_B(slice_of_x_values []float64) []float64 {
 
 // Задание на структуры
 type Cat struct {
-	Age  int
+	Age  byte
 	Sex  string
 	Name string
 }
 
-func (cat *Cat) GetAge() int {
+func (cat *Cat) GetAge() byte {
 	return cat.Age
 }
 
-func (cat *Cat) SetAge(age int) {
+func (cat *Cat) SetAge(age byte) {
 	cat.Age = age
 }
 
