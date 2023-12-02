@@ -9,7 +9,7 @@ func radians(deg float64) float64 {
 }
 
 func calculate(x float64) float64 {
-	return (math.Pow(0.48, 3) + math.Pow(math.Sin(radians(1.2 * x)), 2)) / (math.Acos(x * 0.48 * x) + math.Pow(math.E, -x/2))
+	return (math.Pow(0.48, 3) + math.Pow(math.Sin(radians(1.2*x)), 2)) / (math.Acos(x*0.48*x) + math.Pow(math.E, -x/2))
 }
 
 func TaskA(x_start, x_end, x_delta float64) []float64 {
@@ -20,11 +20,11 @@ func TaskA(x_start, x_end, x_delta float64) []float64 {
 		answerA = append(answerA, calculate(i))
 	}
 	return answerA
-} 
+}
 
 func TaskB(xes []float64) []float64 {
 	answerB := make([]float64, 0, len(xes))
-	for _, i:= range xes {
+	for _, i := range xes {
 		answerB = append(answerB, calculate(i))
 	}
 	return answerB
