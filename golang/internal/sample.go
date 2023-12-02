@@ -4,6 +4,10 @@ import (
 	"math"
 )
 
+func Summ(a, b int) int {
+	return a + b
+}
+
 func radians(deg float64) float64 {
 	return (deg) * (math.Pi / 180)
 }
