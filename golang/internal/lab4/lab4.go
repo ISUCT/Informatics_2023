@@ -7,8 +7,7 @@ func ToRadians(deg float64) float64 {
 }
 
 func Calculate(x float64) float64 {
-	var exp float64
-	exp = (math.Pow(math.Sin(ToRadians(x)), 3) + math.Pow(math.Cos(ToRadians(x)), 3)) * math.Log10(x)
+	exp := (math.Pow(math.Sin(ToRadians(x)), 3) + math.Pow(math.Cos(ToRadians(x)), 3)) * math.Log10(x)
 	return exp
 }
 
