@@ -9,11 +9,11 @@ func Log(base, j float64) float64 {
 	return math.Log(j) / math.Log(base)
 }
 
-func result(a float64, x float64, b float64) float64 {
+func result(a float64, b float64, x float64) float64 {
 	return (math.Log10(math.Pow(x, 3)-1) / Log(5, (a*(math.Pow(x, 2)))-b))
 }
 
-func taskA(a float64, b float64, x_begin float64, x_end float64, x_delta float64) []float64 {
+func taskA(a, b, x_begin, x_end, x_delta float64) []float64 {
 	otvetA := make([]float64, 0, int((x_end-x_begin)/x_delta))
 	for x := x_begin; x <= x_end; x += x_delta {
 		otvetA = append(otvetA, result(a, b, x))
