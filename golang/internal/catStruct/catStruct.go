@@ -14,12 +14,13 @@ func (c cat) GetAge() int {
 	return c.age
 }
 
-func NewCat(setAge int, setName, setBreed string) cat {
-	return cat{
-		age:   setAge,
-		name:  setName,
-		breed: setBreed,
+func NewCat(ageVar int, nameVar, breedVar string) (cat, error) {
+	var c cat = cat{
+		name:  nameVar,
+		breed: breedVar,
 	}
+	var err = c.SetAge(ageVar)
+	return c, err
 }
 
 func (c *cat) SetAge(age int) error {
@@ -27,7 +28,7 @@ func (c *cat) SetAge(age int) error {
 		c.age = age
 		return nil
 	}
-	return fmt.Errorf("invalid cat age")
+	return fmt.Errorf("cat named \"%s\" has invalid age", c.GetName())
 }
 
 func (c cat) GetBreed() string {
@@ -43,5 +44,5 @@ func (c *cat) SetName(name string) {
 }
 
 func (c cat) PetTheCat() {
-	fmt.Println("Meow!")
+	fmt.Printf("Cat %s says meow\n", c.GetName())
 }
