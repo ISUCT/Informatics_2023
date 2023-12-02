@@ -29,7 +29,6 @@ func TaskB(a []float64) []float64 {
 	for i := range a {
 		y := znachenie_funkcii(a[i])
 		list_of_by = append(list_of_by, y)
-		i++
 	}
 	return list_of_by
 }
