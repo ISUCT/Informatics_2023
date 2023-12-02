@@ -8,8 +8,11 @@ import (
 
 func main() {
 	a := 2.25
+	Xs := 1.2
+	Xe := 2.7
+	step := 0.3
 	fmt.Println("Задача A")
-	x, y := lab4.TaskA(1.2, 2.7, 0.3, a)
+	x, y := lab4.TaskA(Xs, Xe, step, a)
 	for i := range y {
 		fmt.Println("При x=", x[i], "y=", y[i])
 	}
