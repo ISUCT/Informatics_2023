@@ -7,7 +7,7 @@ func Calc(a, b, x float64) float64 {
 }
 
 func Task1(a float64, b float64, x1 float64, x2 float64, deltax float64) []float64{
-	var answersA []float64 = make([]float64, int((x2 - x1)/deltax) + 1)
+	var answersA []float64 = make([]float64, 0, int((x2 - x1)/deltax) + 1)
 	for x:=x1; x <= x2; x += deltax{
 		y := Calc(a,b,x)
 		answersA = append(answersA, y)
@@ -16,7 +16,7 @@ func Task1(a float64, b float64, x1 float64, x2 float64, deltax float64) []float
 }
 
 func Task2(a float64, b float64, znachx[] float64) []float64{
-	var answersB []float64 = make([]float64, len(znachx))
+	var answersB []float64 = make([]float64, 0, len(znachx))
 	for _, value := range znachx{
 		x := value
 		y := Calc(a,b,x)
