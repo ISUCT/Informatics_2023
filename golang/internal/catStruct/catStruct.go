@@ -28,7 +28,7 @@ func (c *cat) SetAge(age int) error {
 		c.age = age
 		return nil
 	}
-	return fmt.Errorf("cat named \"%s\" has invalid age", c.GetName())
+	return fmt.Errorf("failed SetAge() for cat named \"%s\" - invalid age", c.GetName())
 }
 
 func (c cat) GetBreed() string {
