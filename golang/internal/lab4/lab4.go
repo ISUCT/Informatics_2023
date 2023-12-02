@@ -13,7 +13,7 @@ func f(x float64) float64 {
 }
 
 func TaskA(start, end, x float64) []float64 {
-	var answers []float64 = make([]float64, int((end-start)/x)+1)
+	var answers []float64 = make([]float64, 0, int((end-start)/x))
 	for i := start; i < end; i += x {
 		answers = append(answers, f(i))
 	}
@@ -21,7 +21,7 @@ func TaskA(start, end, x float64) []float64 {
 }
 
 func TaskB(numbers [5]float64) []float64 {
-	var answers []float64 = make([]float64, len(numbers))
+	var answers []float64 = make([]float64, 0, len(numbers))
 	for i := 0; i < len(numbers); i++ {
 		answers = append(answers, f(numbers[i]))
 	}
