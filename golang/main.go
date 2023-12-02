@@ -25,5 +25,4 @@ func main() {
 	var xList = []float64{0.35, 1.28, 3.51, 5.21, 4.16}
 
 	prnt(xList, lab4.TaskB(xList, a, b))
-
 }
