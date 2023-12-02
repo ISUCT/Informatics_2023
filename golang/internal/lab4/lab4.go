@@ -1,6 +1,7 @@
 package lab4
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -26,4 +27,10 @@ func TaskB(numbers [5]float64) []float64 {
 		answers = append(answers, f(numbers[i]))
 	}
 	return answers
+}
+
+func Output(answers []float64) {
+	for _, i := range answers {
+		fmt.Println(i)
+	}
 }

@@ -8,8 +8,10 @@ import (
 
 func main() {
 	fmt.Println("Task A")
-	fmt.Println(lab4.TaskA(0.2, 2.2, 0.4))
+	answersA := lab4.TaskA(0.2, 2.2, 0.4)
+	lab4.Output(answersA)
 
 	fmt.Println("\nTask B")
-	fmt.Println(lab4.TaskB([5]float64{0.1, 0.9, 1.2, 1.5, 2.3}))
+	answersB := lab4.TaskB([5]float64{0.1, 0.9, 1.2, 1.5, 2.3})
+	lab4.Output(answersB)
 }
