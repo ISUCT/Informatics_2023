@@ -16,11 +16,11 @@ func (car *Car) ChangeColor(RequiredColor string) string {
 	return changes
 }
 func (car *Car) Move() {
-	fmt.Printf("The car is moving at a speed of %f Kilometers per hour \n", car.MaxSpeedKMPH)
+	fmt.Printf("The %s is moving at a speed of %0.f Kilometers per hour \n", car.Name, car.MaxSpeedKMPH)
 }
 
 func (car *Car) Table() {
 	if car.Weight > 100 {
-		fmt.Printf("Your table is broken because the %f kilogram machine is too heavy \n", car.Weight)
+		fmt.Printf("Your table is broken because the %0.f kilogram machine is too heavy \n", car.Weight)
 	}
 }
