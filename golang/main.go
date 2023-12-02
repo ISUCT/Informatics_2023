@@ -25,5 +25,4 @@ func main() {
 	for i := range y {
 		fmt.Println("При x=", x[i], "y=", y[i])
 	}
-
 }
