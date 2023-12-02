@@ -14,8 +14,8 @@ func znachenie_funkcii(x float64) float64 {
 func TaskA(xn, xk, dx float64) ([]float64, []float64) {
 	// var list_of_x = []float64{}
 	// var list_of_y = []float64{}
-	list_of_x := make([]float64, 0)
-	list_of_y := make([]float64, 0)
+	list_of_x := make([]float64, 0, (int((xk-xn)/dx + 1)))
+	list_of_y := make([]float64, 0, len(list_of_x))
 	for i := xn; i <= xk; i += dx {
 		i := math.Round(math.Abs(i)*100) / 100
 		y := znachenie_funkcii(i)
@@ -25,7 +25,8 @@ func TaskA(xn, xk, dx float64) ([]float64, []float64) {
 	return list_of_x, list_of_y
 }
 func TaskB(a []float64) []float64 {
-	var list_of_by = []float64{}
+	// var list_of_by = []float64{}
+	list_of_by := make([]float64, 0, len(a))
 	for i := range a {
 		y := znachenie_funkcii(a[i])
 		list_of_by = append(list_of_by, y)
