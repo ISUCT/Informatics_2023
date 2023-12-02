@@ -8,15 +8,15 @@ import (
 	"isuct.ru/informatics2022/internal/lab4"
 )
 
-func printResult(xL []float64, yL []float64) {
-	for i := range yL {
-		fmt.Printf("x = %.2f, y = %f\n", xL[i], yL[i])
-	}
-}
-
 func checkForError(err error) {
 	if err != nil {
 		log.Fatal(err)
+	}
+}
+
+func printResult(xL []float64, yL []float64) {
+	for i := range yL {
+		fmt.Printf("x = %.2f, y = %f\n", xL[i], yL[i])
 	}
 }
 
@@ -38,14 +38,22 @@ func main() {
 	printResult(xList, yList)
 	fmt.Println("---")
 
-	var cat = catStruct.NewCat(6, "Tiger", "Siamese")
-
-	var err error = cat.SetAge(3)
+	cat, err := catStruct.NewCat(6, "Tiger", "Siamese")
+	checkForError(err)
+	anotherCat, err := catStruct.NewCat(9, "No name", "unknown")
 	checkForError(err)
 
+	cat.SetAge(3)
+	checkForError(err)
+
+	anotherCat.SetName("Marshal")
 	cat.SetName("Luna")
 
 	fmt.Printf("Cat's age is %d\n", cat.GetAge())
 	fmt.Printf("Its name is %s\n", cat.GetName())
 	cat.PetTheCat()
+
+	fmt.Printf("Another cat's age is %d\n", anotherCat.GetAge())
+	fmt.Printf("Its breed is %s\n", anotherCat.GetBreed())
+	anotherCat.PetTheCat()
 }
