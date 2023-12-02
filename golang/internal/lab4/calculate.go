@@ -9,7 +9,7 @@ func Calc(a, b, x float64) float64 {
 }
 
 func Task_A(a, b, xn, xk, dx float64) []float64 {
-	y1 := []float64{}
+	y1 := make([]float64, 0, int(((xk-xn)/dx)+1))
 	for x := xn; x <= xk; x += dx {
 		y1 = append(y1, Calc(a, b, x))
 	}
@@ -17,7 +17,7 @@ func Task_A(a, b, xn, xk, dx float64) []float64 {
 }
 
 func Task_B(a, b float64, vhodnie_x []float64) []float64 {
-	y2 := []float64{}
+	y2 := make([]float64, 0, len(vhodnie_x))
 	for _, x := range vhodnie_x {
 		y2 = append(y2, Calc(a, b, x))
 	}
