@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-
 	lab4.Primer()
 	fmt.Println("Мазуров Даниил Алексеевич")
 }
