@@ -47,3 +47,4 @@ func fnk2() {
 	fmt.Println(fnk1(x5))
 
 }
+
