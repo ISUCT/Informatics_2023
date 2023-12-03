@@ -1,28 +1,49 @@
-package main
+package internal
 
 import (
 	"fmt"
 	"math"
 )
-func main() {
-	startX := 0.11
-	endX := 0.36
-	step := 0.05
 
-	for x := startX; x <= endX; x += step {
-		result := calculateFunction(x)
-		fmt.Printf("x = %.2f, y = %.4f\n", x, result)
+func fnk1(c float64) float64 {
+	result :=   (math.Pow(math.Sin(x), 3) +math.Pow(math.Cos(x), 3) * math.Log(x) 
+		     
+	return result
+}
+
+func cycle(xn, xk, xs float64) []float64 {
+	var valuefnk = []float64{}
+	for x := xn; x <= xk; x += xs {
+		valuefnk = append(valuefnk, fnk1(x))
 	}
+	return valuefnk
+}	
+
+func Srez(nums []float64) []float64{
+	var nums_of_srez = make([]float64, 0, len(nums))
+	for _, value := range nums {
+		nums_of_srez = append(nums_of_srez, fnk1(value))
+	}
+	return nums_of_srez
 }
 
-func calculateFunction(x float64) float64 {
-	sinCubed := math.Pow(math.Sin(x), 3)
-	cosCubed := math.Pow(math.Cos(x), 3)
-	lnX := math.Log(x)
-
-	return (sinCubed + cosCubed) * lnX
-}
-
+func fnk2() {
+	fmt.Println("1  Вариант")
+	fmt.Println("Задача А")
+	for x := 0,11 x <= 0,36; x += 0.05 {
+		fmt.Println(fnk1(x))
+	}
+	fmt.Println("Задача B")
+	x1 := 0,2
+	fmt.Println(fnk1(x1))
+	x2 := 0,3
+	fmt.Println(fnk1(x2))
+	x3 := 0,38
+	fmt.Println(fnk1(x3))
+	x4 := 0,43
+	fmt.Println(fnk1(x4))
+	x5 := 0,57
+	fmt.Println(fnk1(x5))
 
 
 
