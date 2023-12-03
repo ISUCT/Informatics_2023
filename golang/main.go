@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-
 	"isuct.ru/informatics2022/internal/lab4"
 	structDish "isuct.ru/informatics2022/internal/structDish"
 )
@@ -27,7 +26,6 @@ func main() {
 	fmt.Println(lab4.TaskB([]float64{2.4, 2.8, 3.9, 4.7, 3.16}, a, b))
 
 	//Лабораторная 5 вариант 14
-
 	fmt.Println("Лабораторная работа 5:")
 
 	dish := structDish.NewDish(50, 277.9, "Картошка с мясом")
@@ -37,5 +35,4 @@ func main() {
 
 	fmt.Printf("Your dish's price is %d\n", dish.GetPrice())
 	fmt.Println(dish)
-
 }

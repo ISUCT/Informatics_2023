@@ -1,9 +1,9 @@
 package sctructDish
 
 type bludo struct {
-	price   uint8
+	price uint8
 	calorie float64
-	name    string
+	name string
 }
 
 func (b bludo) GetPrice() uint8 {
@@ -22,8 +22,8 @@ func (b *bludo) ChangeCalory(calory float64) float64 {
 
 func NewDish(price uint8, calory float64, name string) bludo {
 	return bludo{
-		price:   price,
+		price: price,
 		calorie: calory,
-		name:    name,
+		name: name,
 	}
 }
