@@ -43,10 +43,6 @@ func (f fox) getSpeices() string {
 	return f.species
 }
 
-func (f fox) getHunger() bool {
-	return f.isHungry
-}
-
 func (f fox) getView() error {
 	asciiCode, err := os.ReadFile("Fox ASCII.txt")
 
