@@ -8,9 +8,8 @@ func Log5(x float64) float64 {
 	base := 5.0
 	return (math.Log(x) / math.Log(base))
 }
-
 func form(x, a, b float64) float64 {
-	return math.Log10(x*x-1) / Log5(a*math.Pow(x, 2)-b)
+	return math.Log10(math.Pow(x, 2)-1) / Log5(a*math.Pow(x, 2)-b)
 }
 func TaksA(xn, xk, dx, a, b float64) ([]float64, []float64) {
 	y := make([]float64, 0, (int((xk-xn)/dx - 1)))
@@ -22,7 +21,6 @@ func TaksA(xn, xk, dx, a, b float64) ([]float64, []float64) {
 	return x, y
 }
 func TaskB(xarray []float64, a, b float64) ([]float64, []float64) {
-
 	x := make([]float64, 0, len(xarray))
 	y := make([]float64, 0, len(xarray))
 	for i := 0; i < len(xarray); i++ {

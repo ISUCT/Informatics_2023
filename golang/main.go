@@ -5,7 +5,6 @@ import (
 
 	"isuct.ru/informatics2022/internal/lab4"
 )
-
 func main() {
 	fmt.Println("Кульбакин Аким Александрович")
 	fmt.Println("Задача А")
