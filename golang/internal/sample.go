@@ -27,4 +27,3 @@ func Srez(nums []float64) []float64{
 	}
 	return nums_of_srez
 }
-
