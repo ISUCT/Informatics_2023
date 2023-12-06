@@ -34,10 +34,10 @@ func output(results []float64) {
 
 func Solve(a, x_begin, x_end, x_delta float64) {
 	results := taskA(a, x_begin, x_end, x_delta)
-  	fmt.Println("Решения задачи под А:")
+  	fmt.Println("Solutions to task A:")
   	output(results)
   
   	results = taskB(a, []float64{1.28, 1.36, 2.47, 3.68, 4.56})
-  	fmt.Println("Решения задачи под В:")
+  	fmt.Println("Solutions to task В:")
   	output(results)
 }

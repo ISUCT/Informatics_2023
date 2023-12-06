@@ -33,7 +33,7 @@ func (p *person) SetGender(gender string) error {
 		p.gender = gender
 		return nil
 	}
-	return fmt.Errorf("gender can only be M/F/Other")
+	return fmt.Errorf("gender can only be M/F/Other/Unknown")
 }
 
 func NewPerson(Name, Gender string, Age int) (person, error, error) {
