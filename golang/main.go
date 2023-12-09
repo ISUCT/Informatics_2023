@@ -1,24 +1,18 @@
 package main
 
-import "fmt"
 import (
 	"fmt"
+
 	"isuct.ru/informatics2022/internal"
 )
-func main() {
-	fmt.Println("Семенова Дарья Сергеевна")
-}
 
 func main() {
+	//лаба2
 	fmt.Println("Семенова Дарья Сергеевна")
-}
 
-	fmt.Println("Значение функции №18 при данных задачи А =")
-		fmt.Println(y1)
-	fmt.Println("Значение функции №18 при данных задачи Б =")
-	for i := 0; i < 5; i++ {
-		var y2 = (math.Pow((a + b*x), 2.5)) / (1 + (math.Log10(a + b*x)))
-		fmt.Println(y2)
+	//лаба 3,4-Вариант№18
+	fmt.Println("Значение функции №18 при данных задачи А =",internal.TaskA(1.1, 3.6, 0.5))
+	fmt.Println("Значение функции №18 при данных задачи Б =",internal.TaskB([]float64{1.2, 1.28, 1.36, 1.46, 2.35}))
 	}
 	
 
