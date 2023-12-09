@@ -1,7 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"isuct.ru/informatics2022/internal/lab4"
+)
 
 func main() {
 	fmt.Println("Кочетов данил Романович")
+
+	fmt.Println("Lab 4")
+
+	a := 0.05
+	b := 0.06
+	x_beg := 0.2
+	x_end := 0.95
+	x_stp := 0.15
+
+	xList := []float64{0.08, 0.26, 0.35, 0.41, 0.53}
+
+	fmt.Println(lab4.Task_A(x_beg, x_end, x_stp, a, b))
+	fmt.Println(lab4.Task_B(xList, a, b))
 }
