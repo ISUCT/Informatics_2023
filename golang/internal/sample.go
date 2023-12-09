@@ -5,11 +5,6 @@ import (
 	"math"
 )
 
-func Main() {
-	zadachkamathForRange()
-	zadachkamathForValues()
-}
-
 func ZadachkamathForRange() {
 	a := 4.1
 	b := 2.7
