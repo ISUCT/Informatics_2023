@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"isuct.ru/informatics2022/internal/samle.go"
+	"isuct.ru/informatics2022/internal"
 )
 
 func main() {
