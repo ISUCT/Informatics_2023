@@ -6,7 +6,7 @@ import (
 	lab4 "isuct.ru/informatics2022/internal/LAB4"
 )
 
-// 5 вариант
+// Лабораторная 4 вариант 5
 func main() {
 	fmt.Println("Гвоздарёв Ярослав Владимирович")
 	fmt.Println("задача A")

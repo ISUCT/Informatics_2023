@@ -4,14 +4,11 @@ import (
 	"math"
 )
 
-func formulausl(x, a, b float64) float64 {
-	return math.Pow(a+b*x, 3.5)/1.8 + math.Pow(math.Cos(a*x), 3)
-}
 func formulamain(x, a, b float64) float64 {
-	if formulausl(x, a, b) >= 5 && x > 5 {
-		return (math.Pow(math.Log10(math.Pow(a, 2)+x), 2) / math.Pow(a+x, 2))
+	if x <= 5 {
+		return math.Pow(a+b*x, 3.5)/1.8 + math.Pow(math.Cos(a*x), 3)
 	} else {
-		return (0)
+		return (math.Pow(math.Log10(math.Pow(a, 2)+x), 2) / math.Pow(a+x, 2))
 	}
 }
 func TaskA(xNach, xKon, shag, a, b float64) ([]float64, []float64) {
