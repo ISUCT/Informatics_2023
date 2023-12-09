@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"informatics2023/golang/"
+	"informatics2023/golang/lab4"
 )
 
 func main() {
