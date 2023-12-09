@@ -2,9 +2,17 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"isuct.ru/informatics2022/internal/lab4"
+	"isuct.ru/informatics2022/internal/lab5"
 )
+
+func checkForError(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
+}
 
 func main() {
 	fmt.Println("Кочетов Максим Романович")
@@ -20,4 +28,13 @@ func main() {
 
 	fmt.Println(lab4.Task_A(x_beg, x_end, x_stp, a, b))
 	fmt.Println(lab4.Task_B(xList, a, b))
+
+	fmt.Println("Lab 5")
+
+	document, err := lab5.NewDocument("docx", 3200, "Document")
+	checkForError(err)
+
+	fmt.Printf("The document type is %s\n", document.GetType())
+	fmt.Printf("The document size is %d bites\n", document.GetSize())
+	fmt.Printf("The document title is %s\n", document.GetTitle())
 }
