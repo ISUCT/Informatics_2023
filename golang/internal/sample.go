@@ -24,7 +24,7 @@ func up(x float64) float64 {
 
 func SolveB(numbers []float64) []float64 {
 	fmt.Println("\n Задача B:")
-	var resultB []float64 = make([]float64, 0, 5)
+	var resultB []float64 = make([]float64, 0, len(numbers))
 	for x := 0; x <= 4; x++ {
 		upf := up(numbers[x])
 		downf := down(numbers[x], a, b)
@@ -33,10 +33,10 @@ func SolveB(numbers []float64) []float64 {
 	return resultB
 }
 
-func SolveA(a, b float64) []float64 {
+func SolveA(a, b, xn, xk, dx float64) []float64 {
 	fmt.Println("Задача A:")
-	var resultA []float64 = make([]float64, 0, 6)
-	for x := 1.2; x <= 2.2; x += 0.2 {
+	var resultA []float64 = make([]float64, 0, int(((xk-xn)/dx + 1)))
+	for x := xn; x <= xk; x += dx {
 		upf := up(x)
 		downf := down(x, a, b)
 		resultA = append(resultA, upf/downf)
