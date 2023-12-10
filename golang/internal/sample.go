@@ -11,7 +11,7 @@ func fnk1(b, c float64) float64 {
 	return result
 }
 
-func cycle(xn, xk, xs float64) []float64 {
+func Cycle(xn, xk, xs float64) []float64 {
 	var valuefnk = []float64{}
 	for x := xn; x <= xk; x += xs {
 		valuefnk = append(valuefnk, fnk1(x))
@@ -26,4 +26,3 @@ func Srez(nums []float64) []float64{
 	}
 	return nums_of_srez
 }
-
