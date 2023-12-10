@@ -44,6 +44,4 @@ func main() {
 	checkError(err)
 	cat2.AssigneName("Funtik")
 	fmt.Println(cat2)
-
-	
 }
