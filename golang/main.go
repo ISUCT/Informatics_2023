@@ -2,10 +2,16 @@ package main
 
 import (
 	"fmt"
-
+	"log"
 	"isuct.ru/informatics2022/internal/lab4"
 	structcat "isuct.ru/informatics2022/internal/structCat"
 )
+
+func checkError(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
+}
 
 func main() {
 	//Лабораторная работа 2
@@ -28,13 +34,16 @@ func main() {
 
 	//Лабораторная работа номер 5 - вариант 1(варианта 23 не было в списке, перепрыгнул на +1)
 	fmt.Println("Лаборатноная работа номер 5")
-	cat := structcat.NewCat(7, "Male", "British longhair", "Sky")
-
-	fmt.Println(cat)
-	cat.AssignBreed("Burmese cat")
-	cat.AssignAge(10)
-
-	fmt.Printf("It's your cat name %s\n", cat.GetName())
+	
+	cat, err := structcat.NewCat(10, "Male", "British", "Skaya")
+	checkError(err)
+	fmt.Println(*cat)
+	cat2, err := structcat.NewCat(18, "Female", "Tiger", "Melmon")
 	fmt.Printf("Your cat is %d\n", cat.GetAge())
-	fmt.Println(cat)
+	fmt.Println(cat2)
+	checkError(err)
+	cat2.AssigneName("Funtik")
+	fmt.Println(cat2)
+
+	
 }

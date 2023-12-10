@@ -1,8 +1,6 @@
 package structcat
 
-import (
-	
-)
+import "fmt"
 
 type cat struct {
 	age    uint8
@@ -11,12 +9,43 @@ type cat struct {
 	name   string
 }
 
-func (c cat) GetAge() uint8 {
-	return c.age
+func NewCat(age uint8, gender, breed, name string) (*cat, error) {
+	var c cat = cat{
+		name:   name,
+		gender: gender,
+		breed:  breed,
+	}
+
+	check := c.AssignedAge(age)
+
+	if check != nil {
+		return nil, check
+	}
+	return &c, check
 }
 
-func (c cat) GetGender() string {
-	return c.gender
+func (c *cat) AssignedAge(age uint8) error {
+	if age >= 17 {
+		return fmt.Errorf("I'm afraid there is't cat here")
+	}
+	c.age = age
+	return nil
+}
+
+func (c *cat) AssignedGender(gender string) {
+	c.gender = gender
+}
+
+func (c *cat) AssigneName(name string) {
+	c.name = name
+}
+
+func (c *cat) AssignedBreed(breed string) {
+	c.breed = breed
+}
+
+func (c cat) GetAge() uint8 {
+	return c.age
 }
 
 func (c cat) GetBreed() string {
@@ -27,23 +56,6 @@ func (c cat) GetName() string {
 	return c.name
 }
 
-func (c *cat) AssignName(name string) {
-	c.name = name
-}
-
-func (c *cat) AssignBreed(breed string) {
-	c.breed = breed
-}
-
-func (c *cat) AssignAge(age uint8) {
-	c.age = age
-}
-
-func NewCat(setAge uint8, setGender, setBreed, setName string) cat {
-	return cat{
-		age:    setAge,
-		gender: setGender,
-		breed:  setBreed,
-		name:   setName,
-	}
+func (c cat) GetGender() string {
+	return c.name
 }
