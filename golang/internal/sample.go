@@ -7,7 +7,7 @@ import (
 
 const b = 2.5
 
-func fnk1(c float64) float64 {
+func fnk1(b, c float64) float64 {
 	result := 1 + math.Sin(b*b*b+c*c*c)*math.Sin(b*b*b+c*c*c)/math.Cbrt(b*b*b+c*c*c)
 	return result
 }
