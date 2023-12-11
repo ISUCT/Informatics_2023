@@ -12,7 +12,7 @@ func fnk1(b, c float64) float64 {
 }
 
 func Cycle(xn, xk, xs float64) []float64 {
-	var valuefnk = []float64{}
+	var valuefnk  = make([]float64, 0, int((xk-xn)/xs) +1)
 	for x := xn; x <= xk; x += xs {
 		valuefnk = append(valuefnk, fnk1(x))
 	}
