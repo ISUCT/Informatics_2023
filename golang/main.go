@@ -2,17 +2,10 @@ package main
 
 import (
 	"fmt"
-	"log"
 
-	"isuct.ru/informatics2022/internal/catstruct"
 	"isuct.ru/informatics2022/internal/lab4"
 )
 
-func checkForError(e error) {
-	if e != nil {
-		log.Fatal("Error free")
-	}
-}
 func rez(x, y []float64) {
 	for i, v := range y {
 		fmt.Printf("x = %f | y = %f \n", x[i], v)
@@ -33,14 +26,4 @@ func main() {
 
 	ifeal = lab4.TaskB(xList, b)
 	rez(xList, ifeal)
-	var cat = catstruct.NewCat(3, "Jack", "black and white")
-
-	var err error = cat.SetAge(5)
-	checkForError(err)
-
-	cat.SetName("Tom")
-
-	fmt.Printf("Cat's age is %d\n", cat.GetAge())
-	fmt.Printf("Its name is %s\n", cat.GetName())
-	fmt.Printf("Its color is %s\n", cat.GetColor())
 }
