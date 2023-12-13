@@ -12,20 +12,18 @@ func formula(x float64) float64 {
 	return ((math.Pow(math.Sin(radians(x)), 3) + math.Pow(math.Cos(radians(x)), 3)) * math.Log(x))
 }
 
-func TaskA(xBeg, xEnd, detX float64) ([]float64, []float64) {
-	var cap int = int(math.Ceil((xEnd-xBeg)/detX + 1))
-	var yList = make([]float64, 0, cap)
-	var xlist2 = make([]float64, 0, cap)
+func TaskA(xBeg, xEnd, detX float64) []float64 {
+	var lenx int = int((xEnd-xBeg)/detX + 1)
+	z := make([]float64, 0, lenx)
 	for i := xBeg; i <= xEnd; i += detX {
-		yList = append(yList, formula(i))
-		xlist2 = append(xlist2, i)
+		z = append(z, formula(i))
 	}
-	return yList, xlist2
+	return z
 }
-func TaskB(xList []float64) []float64 {
-	var yList = make([]float64, 0)
-	for i := range xList {
-		yList = append(yList, formula(xList[i]))
+func TaskB(list []float64) []float64 {
+	var list2 = make([]float64, 0, len(list))
+	for i := range list {
+		list2 = append(list2, formula(list[i]))
 	}
-	return yList
+	return list2
 }
