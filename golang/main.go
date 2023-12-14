@@ -12,7 +12,10 @@ func main() {
 	a := 2.0
 	b := 1.1
 	fmt.Println("Задача А")
-	fmt.Println(internal.TaskA(0.08, 1.08, 0.2, a, b))
+	x_begin := 0.08
+	x_end := 1.08
+	x_delta := 0.2
+	fmt.Println(internal.TaskA(x_begin, x_end, x_delta, a, b))
 	fmt.Println("Задача B")
 	slice := []float64{0.1, 0.3, 0.4, 0.45, 0.65}
 	fmt.Println(internal.TaskB(slice, a, b))
