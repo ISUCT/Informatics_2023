@@ -1,6 +1,7 @@
 package internal
 
 import (
+	"fmt"
 	"math"
 )
 
@@ -35,4 +36,40 @@ func problem_1(a, b, x float64) float64 {
 func drob(y float64) float64 {
 	result_1 := 1 / y
 	return result_1
+}
+
+type Piggy struct {
+	name  string
+	age   int64
+	breed string
+	sex   string
+	color string
+}
+
+func Structure() {
+	var PiggyBlin Piggy = Piggy{name: "Rose", age: 4, breed: "Mangalitsa", sex: "female", color: "brown"}
+	PiggyBlin.print()
+	PiggyBlin.setName("Teodora")
+	PiggyBlin.setColor("Pink")
+	PiggyBlin.setBreed("Hereford")
+}
+
+func (pig Piggy) print() {
+	fmt.Println("Имя", pig.name)
+	fmt.Println("Возраст", pig.age)
+	fmt.Println("Порода", pig.breed)
+	fmt.Println("Пол", pig.sex)
+	fmt.Println("Цвет", pig.color)
+}
+
+func (pig *Piggy) setName(name1 string) {
+	pig.name = name1
+}
+
+func (pig *Piggy) setColor(color1 string) {
+	pig.color = color1
+}
+
+func (pig *Piggy) setBreed(breed1 string) {
+	pig.breed = breed1
 }
