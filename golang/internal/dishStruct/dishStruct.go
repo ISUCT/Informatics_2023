@@ -11,13 +11,13 @@ type dish struct {
 	name  string
 }
 
-func NewDish(setPrice int, setVid, setName string) (*dish, error) {
+func NewDish(setPrice int, setVid, setName string) *dish {
 	d := &dish{
 		price: setPrice,
 		vid:   setVid,
 		name:  setName,
 	}
-	return d, nil
+	return d
 }
 
 func (d dish) GetPrice() int {
