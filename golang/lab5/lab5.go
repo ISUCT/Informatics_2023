@@ -3,7 +3,6 @@ package lab5
 import "fmt"
 
 type fox struct {
-	image  string
 	name   string
 	age    int
 	gender string
