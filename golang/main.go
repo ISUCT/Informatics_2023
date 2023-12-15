@@ -2,9 +2,17 @@ package main
 
 import (
 	"fmt"
+	"log"
 
+	dishstruct "isuct.ru/informatics2022/internal/dishStruct"
 	"isuct.ru/informatics2022/internal/lab4"
 )
+
+func checkForError(err error) {
+	if err != nil {
+		log.Fatal("Card declined")
+	}
+}
 
 func main() {
 	fmt.Println("Kochetkov Kirill")
@@ -14,4 +22,16 @@ func main() {
 
 	res2 := lab4.Task2(7.2, 4.2, []float64{2.4, 2.8, 3.9, 4.7, 3.16})
 	fmt.Println(res2)
+
+	//lab5
+	dish := dishstruct.NewDish(5000, "soup", "Borsch")
+
+	var err error = dish.SetPrice(350)
+	checkForError(err)
+
+	dish.SetName("Sorrel")
+
+	fmt.Printf("Your dish's price is %d\n", dish.GetPrice())
+	fmt.Printf("Its type is %s\n", dish.GetVid())
+	dish.TipTheWaiter()
 }
