@@ -53,7 +53,7 @@ func (p person) KnowGender() {
 
 func (p person) GoToWalk(time int) (string, error) {
 	if time <= 12 && time >= 0 {
-		return ("At " + fmt.Sprint(time) + " o'clock " + p.name + "goes for a walk.\n"), nil
+		return ("At " + fmt.Sprint(time) + " o'clock " + p.name + " goes for a walk.\n"), nil
 	}
 	return " ", fmt.Errorf("time can't be more than 12") 
 }
