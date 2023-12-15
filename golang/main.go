@@ -32,11 +32,9 @@ func main() {
 	ErrorTest(err1)
 	ErrorTest(err2)
 
-	person1.SetAge(25)
 	err1 = person1.SetAge(25)
 	ErrorTest(err1)
 
-	person2.SetGender("F")
 	err1 = person2.SetGender("F")
 	ErrorTest(err1)
 
