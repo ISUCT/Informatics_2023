@@ -1,6 +1,7 @@
 package dishstruct
 
 import (
+	"errors"
 	"fmt"
 )
 
@@ -10,12 +11,13 @@ type dish struct {
 	name  string
 }
 
-func NewDish(setPrice int, setVid, setName string) dish {
-	return dish{
+func NewDish(setPrice int, setVid, setName string) (*dish, error) {
+	d := &dish{
 		price: setPrice,
 		vid:   setVid,
 		name:  setName,
 	}
+	return d, nil
 }
 
 func (d dish) GetPrice() int {
@@ -35,13 +37,13 @@ func (d *dish) SetName(name string) {
 }
 
 func (d *dish) SetPrice(price int) error {
-	if price <= 5000 {
-		d.price = price
-		return nil
+	if price >= 5000 {
+		return errors.New("The dish is not affordable")
 	}
-	return fmt.Errorf("The dish is not affordable")
+	d.price = price
+	return nil
 }
 
 func (d *dish) TipTheWaiter() {
-	fmt.Println("Thx for your tip!")
+	fmt.Println("If you liked the service you can leave a tip!")
 }
