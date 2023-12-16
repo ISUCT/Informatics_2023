@@ -1,6 +1,7 @@
 package main
 
 import (
+	"log"
 	"fmt"
 	"isuct.ru/informatics2022/internal"
 )
@@ -14,3 +15,10 @@ func main() {
 	fmt.Println(answer2)
 	
 }
+
+func checkForError(err error) {
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
