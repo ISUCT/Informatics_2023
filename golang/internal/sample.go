@@ -7,7 +7,7 @@ func Summ(a, b int) int {
 }
 
 func Task_A(x_begin, x_end, x_step float64) []float64 {
-	var otvet_a = make([]float64, 0, 6)
+	var otvet_a = make([]float64, 0, int((x_end-x_begin)/x_step + 1.0))
 	for i := x_begin; i <= x_end; i += x_step {
 		otvet_a = append(otvet_a, function(i))
 	}
@@ -15,7 +15,7 @@ func Task_A(x_begin, x_end, x_step float64) []float64 {
 }
 
 func Task_B(xs []float64) []float64 {
-	var otvet_b = make([]float64, 0, 5)
+	var otvet_b = make([]float64, 0, len(xs))
 	for _, i := range xs {
 		otvet_b = append(otvet_b, function(i))
 	}
