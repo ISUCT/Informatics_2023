@@ -2,32 +2,16 @@ package main
 
 import (
 	"fmt"
-	"math"
+
+	"isuct.ru/informatics2022/internal"
 )
 
 func main() {
+	var venti internal.Character = internal.Character{Name: "Venti", Class: "Bard", Level: 1, HP: 10}
 	fmt.Println("Красильникова Анастасия 1/278")
-	for i := 1.81; i <= 5.31; i = i + float64(0.7) {
-		res := func_resolution(i)
-		fmt.Println(res)
-	}
-	var numbers [5]float64 = [5]float64{2.4, 2.8, 3.9, 4.7, 3.16}
-	for i := 0; i <= len(numbers)-1; i++ {
-		res := func_resolution(numbers[i])
-		fmt.Println(res)
-	}
-}
-
-func func_resolution(x float64) float64 {
-	var a float64 = 7.2
-	var b float64 = 4.2
-	r := b * x
-	diff := a - r
-	mod := math.Abs(diff)
-	pow := math.Pow(math.Log10(x), 3)
-	fraction := mod / pow
-	square := math.Cbrt(fraction)
-	y := square
-
-	return y
+	fmt.Println(internal.Cycle(1.81, 5.31, 0.7))
+	fmt.Println(internal.Array([]float64{2.4, 2.8, 3.9, 4.7, 3.16}))
+	fmt.Println("Level up", venti.LevelUp(venti.Level))
+	fmt.Printf("HP up. Current value: %d \n", venti.HpChange(venti.Level))
+	fmt.Printf("Chatacter class was changed to %s", venti.ClassChange("Wizard"))
 }
