@@ -4,18 +4,14 @@ package lab_4
 
 import "fmt"
 
-type Document struct {
+type document struct {
 	documentPath string
 	documentType string
 	documentSize int64
 }
 
-func NewDocument(path, documentType string, documentSize int64) (*Document, error) {
-	if documentSize < 0 {
-		return nil, fmt.Errorf("Size is less than zero.")
-	}
-
-	document := Document{
+func NewDocument(path, documentType string, documentSize int64) (*document, error) {
+	document := document{
 		documentPath: path,
 		documentType: documentType,
 	}
@@ -29,19 +25,19 @@ func NewDocument(path, documentType string, documentSize int64) (*Document, erro
 	return &document, error
 }
 
-func (d *Document) DocumentPath() string {
+func (d *document) DocumentPath() string {
 	return d.documentPath
 }
 
-func (d *Document) DocumentType() string {
+func (d *document) DocumentType() string {
 	return d.documentType
 }
 
-func (d *Document) DocumentSize() int64 {
+func (d *document) DocumentSize() int64 {
 	return d.documentSize
 }
 
-func (d *Document) SetDocumentSize(size int64) error {
+func (d *document) SetDocumentSize(size int64) error {
 	if size < 0 {
 		return fmt.Errorf("Error: size must be >= 0. Current value: %v", size)
 	}
