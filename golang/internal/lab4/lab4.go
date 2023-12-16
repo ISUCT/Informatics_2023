@@ -9,7 +9,7 @@ func Calc(x float64) float64 {
 }
 
 func Primer1(xn, xk, deltaX float64) []float64 {
-	var results []float64
+	results := make([]float64, 0)
 	for xn <= xk {
 		y := Calc(xn)
 		results = append(results, y)
@@ -18,8 +18,9 @@ func Primer1(xn, xk, deltaX float64) []float64 {
 	return results
 }
 
-func Primer2(myslicefortask2 []float64) {
+func Primer2(myslicefortask2 []float64) []float64 {
 	for i, x := range myslicefortask2 {
 		myslicefortask2[i] = Calc(x)
 	}
+	return myslicefortask2
 }

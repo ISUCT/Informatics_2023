@@ -11,6 +11,6 @@ func main() {
 	fmt.Println("Кузьмин Владислав Иванович")
 	results := lab4.Primer1(0.26, 0.66, 0.08)
 	fmt.Println(results)
-	lab4.Primer2(myslicefortask2)
+	myslicefortask2 = lab4.Primer2(myslicefortask2)
 	fmt.Println(myslicefortask2)
 }
