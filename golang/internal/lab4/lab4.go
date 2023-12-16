@@ -19,7 +19,7 @@ func Primer1(xn, xk, deltaX float64) []float64 {
 }
 
 func Primer2(slice []float64) []float64 {
-	myslicefortask2 := make([]float64, len(slice))
+	myslicefortask2 := make([]float64, 0, len(slice))
 	for i, x := range slice {
 		myslicefortask2[i] = Calc(x)
 	}
