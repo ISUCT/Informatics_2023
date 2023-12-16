@@ -8,7 +8,7 @@ import (
 
 // вариант 12
 func print_answer(xArr, yArr []float64) {
-	for i, _ := range xArr {
+	for i := range xArr {
 		fmt.Println("При x=", xArr[i], "y=", yArr[i])
 	}
 }
