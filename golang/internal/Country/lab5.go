@@ -1,21 +1,35 @@
-package main
+package country
 
 import (
 	"fmt"
-
-	"isuct.ru/informatics2022/internal"
-	country "isuct.ru/informatics2022/internal/Country"
 )
 
+// Определение структуры страны
+type Country struct {
+	CountryName string
+	Population  int
+	Area        float64
+	Capital     string
+}
+
+// Методы для структуры Country
+func (c Country) GetPopulation() int {
+	return c.Population
+}
+
+func (c Country) GetArea() float64 {
+	return c.Area
+}
+func (c Country) GetCapital() string {
+	return c.Capital
+}
+func (c Country) GetCountryName() string {
+	return c.CountryName
+}
+
 func main() {
-	var a = 0.4
-	var b = 0.8
-	fmt.Println(internal.TaskA(a, b, 3.2, 6.2, 0.6))
-	var xList = []float64{4.48, 3.56, 2.78, 5.28, 3.21}
-	fmt.Println(internal.TaskB(xList, a, b), xList)
-	//lab5
 	// Список стран для выбора
-	countries := map[string]country.Country{
+	countries := map[string]Country{
 		"USA": {
 			CountryName: "USA",
 			Population:  333287557,
