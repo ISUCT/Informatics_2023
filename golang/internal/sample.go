@@ -1,6 +1,8 @@
 package internal
 
 import (
+	"errors"
+	"fmt"
 	"math"
 )
 
@@ -31,4 +33,42 @@ func Task_B(slice_of_x_values []float64) []float64 {
 		answer_b = append(answer_b, func_res(i))
 	}
 	return answer_b
+}
+
+// Задание на структуры
+type cat struct {
+	age  int
+	sex  string
+	name string
+}
+
+var ErrWrongAgeValue = errors.New("wrong age value")
+
+func (cat *cat) SetAge(age int) error {
+	if age < 0 {
+		return ErrWrongAgeValue
+	}
+	cat.age = age
+	return nil
+}
+
+func (cat *cat) GetAge() int {
+	return cat.age
+}
+
+func NewCat(name, sex string, age int) (*cat, error) {
+	c := &cat{
+		name: name,
+		sex:  sex,
+	}
+	if err := c.SetAge(age); err != nil {
+		return nil, err
+	}
+	return c, nil
+}
+
+func (cat *cat) PrintAllProperty() {
+	fmt.Println("Имя:", cat.name)
+	fmt.Println("Возраст:", cat.age)
+	fmt.Println("Пол:", cat.sex)
 }
