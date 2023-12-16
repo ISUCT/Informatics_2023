@@ -1,28 +1,35 @@
-package main
+package internal
 
 import "fmt"
 
 type cat struct {
 	name string
 	age  int
-  colour string
+    colour string
 }
 
-func addname() int {
-	return cat.name
+//первый метод addage для получателя cat1
+
+func (cat1 *cat) addage(age int) error{
+	if 0 <= age && age <= 18{
+		cat1.age = age
+		return nil
+	}
+	return fmt.Errorf("Ошибка. Возраст кота не точный.")
 }
 
-func main() {
-	var cat1 = cat{name: "Барсик", age: 3}
+//второй метод addname для получателя cat1
+func (cat1 *cat) addname() string{
+	return cat1.name
+}
 
-	// 1 кошачий год ~ 15 человеческим годам жизни
+//третий метод addcolour для получателя cat1
+func (cat1 *cat) addcolour() string{
+	return cat1.name
+}
 
-	vozrast := cat1.age * 15
-	fmt.Println(cat1.name, cat1.age, vozrast)
-
-	cat1.name = "Пушок"
-	cat1.age = 5
-	fmt.Println("Имя кота:", cat1.name, ".", "Возраст кота:", cat1.age, ",", "по переводу на человеческий:", vozrast)
-	//Последний вариант, для более конкрентного обозначения переменных
-
+func addcat(namecat string, agecat int, colourcat string) (cat,error) {
+	cat1 := cat{name: namecat, colour:colourcat}
+	var error = cat1.addage(agecat)
+	return cat1, error
 }
