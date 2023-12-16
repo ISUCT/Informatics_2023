@@ -16,7 +16,7 @@ func calculateFunction(x float64) float64 {
 } 
  
 func CalculateFunctionInRanges(xStart, xEnd, xStep float64) []float64 { 
- results := make([]float64, 0, 6) 
+ results := make([]float64, 0, int((xEnd - xStart)/xStep + 1.0))
  for x := xStart; x <= xEnd; x += xStep { 
   results = append(results, calculateFunction(x)) 
  } 
