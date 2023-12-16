@@ -5,7 +5,7 @@ import (
 )
 
 type worker struct {
-	name string
+	name   string
 	status string
 	salary int
 }
@@ -28,12 +28,12 @@ func (w *worker) SetName(name string) {
 }
 
 func (w *worker) SetStatus(status string) {
-	w.status= status
+	w.status = status
 }
 
-func (w *worker) SetSalary(salary int) (error) {
-	if (salary>=15000) {
-		w.salary= salary
+func (w *worker) SetSalary(salary int) error {
+	if salary >= 15000 {
+		w.salary = salary
 		return nil
 	} else {
 		return fmt.Errorf("Минимальная зарплата - 15000")

@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 
 	"isuct.ru/informatics2022/internal"
 	"isuct.ru/informatics2022/internal/worker"
@@ -15,8 +14,8 @@ func main() {
 
 	fmt.Println("Рабочий 1")
 	work1, err := worker.NewWorker("Влад", "Хирург", 40000)
-	if (err != nil) {
-		log.Fatal(err)
+	if err != nil {
+		fmt.Printf("%v", err)
 	}
 	fmt.Println(work1.GetSalary())
 	work1.SetSalary(30000)
@@ -26,9 +25,8 @@ func main() {
 	fmt.Println("")
 	fmt.Println("Рабочий 2")
 	work2, err := worker.NewWorker("Леонардо", "Уборщик", 13000)
-	if (err != nil) {
-		log.Fatal(err)
+	if err != nil {
+		fmt.Printf("%v\n", err)
 	}
-	// Это не выводится, т.к. ошибка
 	fmt.Println(work2.GetName())
 }
