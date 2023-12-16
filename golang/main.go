@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	fmt.Println("Васильева Вероника Дмитриевна")
+	fmt.Println("Васильева Вероника Дмитриевнa")
 	fmt.Println("Задача А")
 	x, y := lab4.TaskA(1.25, 3.25, 0.4)
 	for i := range y {
