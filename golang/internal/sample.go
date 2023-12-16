@@ -36,26 +36,39 @@ func Task_B(slice_of_x_values []float64) []float64 {
 }
 
 // Задание на структуры
-type Cat struct {
-	Age  int
-	Sex  string
-	Name string
+type cat struct {
+	age  int
+	sex  string
+	name string
 }
 
-func (cat *Cat) GetAge() int {
-	return cat.Age
-}
+var ErrWrongAgeValue = errors.New("wrong age value")
 
-func (cat *Cat) SetAge(age int) error {
-	cat.Age = age
-	if cat.Age < 0 {
-		return errors.New("wrong age")
+func (cat *cat) SetAge(age int) error {
+	if age < 0 {
+		return ErrWrongAgeValue
 	}
+	cat.age = age
 	return nil
 }
 
-func (cat *Cat) PrintAllProperty() {
-	fmt.Println("Имя:", cat.Name)
-	fmt.Println("Возраст:", cat.Age)
-	fmt.Println("Пол:", cat.Sex)
+func (cat *cat) GetAge() int {
+	return cat.age
+}
+
+func NewCat(name, sex string, age int) (*cat, error) {
+	c := &cat{
+		name: name,
+		sex:  sex,
+	}
+	if err := c.SetAge(age); err != nil {
+		return nil, err
+	}
+	return c, nil
+}
+
+func (cat *cat) PrintAllProperty() {
+	fmt.Println("Имя:", cat.name)
+	fmt.Println("Возраст:", cat.age)
+	fmt.Println("Пол:", cat.sex)
 }
