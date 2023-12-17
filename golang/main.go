@@ -8,9 +8,9 @@ import (
 func main() {
 	fmt.Println("Мутовкин Илья Алексеевич")
 	
-	taskAResults := Lab4.ZadachkamathForRange()
+	taskAResults := internal.ZadachkamathForRange()
 	fmt.Println("Результаты TaskA:", taskAResults)
 
-	taskBResults := Lab4.ZadachkamathForValues()
+	taskBResults := internal.ZadachkamathForValues()
 	fmt.Println("Результаты TaskB:", taskBResults)
 }
