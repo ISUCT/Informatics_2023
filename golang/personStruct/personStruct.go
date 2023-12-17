@@ -1,7 +1,9 @@
 package personStruct
 
-import "fmt"
-
+import (
+	"errors"
+	"fmt"
+)
 type person struct {
 	name string
 	age int
@@ -25,7 +27,8 @@ func (p *person) SetAge(age int) error {
 		p.age = age
 		return nil
 	}
-	return fmt.Errorf("age is higher or lower than bound")
+	var ErrWrongAge = errors.New("age is higher or lower than bound")
+	return ErrWrongAge
 }
 
 func (p *person) SetGender(gender string) error {
@@ -33,18 +36,23 @@ func (p *person) SetGender(gender string) error {
 		p.gender = gender
 		return nil
 	}
-	return fmt.Errorf("gender can only be M/F/Other/Unknown")
+	var ErrWrongGender = errors.New("gender can only be M/F/Other/Unknown")
+	return ErrWrongGender
 }
 
-func NewPerson(Name, Gender string, Age int) (person, error, error) {
+func NewPerson(name, gender string, age int) (person, error) {
 	var p person = person {
-		age: Age,
-		name: Name,
-		gender: Gender,
+		age: age,
+		name: name,
+		gender: gender,
 	}
-	var err1 = p.SetAge(Age)
-	var err2 = p.SetGender(Gender)
-	return p, err1, err2 
+	var err = p.SetAge(age)
+	if err != nil {
+	    return p, err
+	} else if err = p.SetGender(gender); err != nil {
+		return p, err
+	}
+	return p, err
 }
 
 func (p person) KnowGender() {
@@ -55,5 +63,6 @@ func (p person) GoToWalk(time int) (string, error) {
 	if time <= 12 && time >= 0 {
 		return ("At " + fmt.Sprint(time) + " o'clock " + p.name + " goes for a walk.\n"), nil
 	}
-	return " ", fmt.Errorf("time can't be more than 12 or less than 0") 
+	var ErrWrongTime = errors.New("time can't be more than 12 or less than 0")
+	return " ", ErrWrongTime
 }
