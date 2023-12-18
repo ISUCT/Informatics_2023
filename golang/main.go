@@ -25,7 +25,5 @@ func main() {
 	}
 	fmt.Println(doc2.GetDocumentSize()) // ошибка DocumentSize = 0
 	doc2.DeleteDocument()
-
 }
-
 // 11 вариант
