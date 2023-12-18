@@ -9,8 +9,8 @@ func formula(x float64) float64 {
 }
 
 func TaskA(xn, xc, dx float64) ([]float64, []float64) {
-	y := []float64{}
-	x := []float64{}
+	y := make([]float64, 0, int((xc-xn)/dx-1))
+	x := make([]float64, 0, cap(y))
 	for i := xn; i <= xc; i += dx {
 		y = append(y, formula(i))
 		x = append(x, i)
@@ -18,8 +18,8 @@ func TaskA(xn, xc, dx float64) ([]float64, []float64) {
 	return x, y
 }
 func TaskB(array []float64) ([]float64, []float64) {
-	y := []float64{}
-	x := []float64{}
+	y := make([]float64, 0, len(array))
+	x := make([]float64, 0, cap(y))
 	for _, i := range array {
 		y = append(y, formula(i))
 		x = append(x, i)
