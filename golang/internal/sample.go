@@ -5,10 +5,6 @@ import (
 	"math"
 )
 
-func Summ(a, b int) int {
-	return a + b
-}
-
 func Zadacha_A(x float64) []float64 {
 	fmt.Println("Задача A:")
 	var resultA []float64
