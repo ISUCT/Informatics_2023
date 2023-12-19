@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	lab4 "isuct.ru/informatics2022/internal"
+	lab4 "isuct.ru/informatics2022/internal/lab4"
 )
 
 func main() {
