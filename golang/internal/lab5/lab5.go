@@ -1,8 +1,7 @@
-package main
+package lab5
 
 import (
 	"errors"
-	"fmt"
 )
 
 type ACE struct {
@@ -73,44 +72,4 @@ func (p *ACE) GetName() string {
 
 func (p *ACE) SetName(name string) {
 	p.name = name
-}
-
-func main() {
-	ace, err := NewACE(1000, 2000, 3000, "ACE 123")
-	if err != nil {
-		fmt.Println("Ошибка создания ACE:", err)
-		return
-	}
-
-	fmt.Println("Текущие значения ACE:")
-	fmt.Printf("Firepower: %.2f\n", ace.GetFirepower())
-	fmt.Printf("Speed: %.2f\n", ace.GetSpeed())
-	fmt.Printf("Armor: %.2f\n", ace.GetArmor())
-	fmt.Printf("Name: %s\n", ace.GetName())
-
-	// Изменение значений через методы Set
-	err = ace.SetFirepower(1500)
-	if err != nil {
-		fmt.Println("Ошибка при установке огневой мощи:", err)
-		return
-	}
-
-	err = ace.SetSpeed(2500)
-	if err != nil {
-		fmt.Println("Ошибка при установке скорости:", err)
-		return
-	}
-
-	err = ace.SetArmor(3500)
-	if err != nil {
-		fmt.Println("Ошибка при установке бронирования:", err)
-		return
-	}
-
-	ace.SetName("ACE 456")
-	fmt.Println("\nИзмененные значения ACE:")
-	fmt.Printf("Firepower: %.2f\n", ace.GetFirepower())
-	fmt.Printf("Speed: %.2f\n", ace.GetSpeed())
-	fmt.Printf("Armor: %.2f\n", ace.GetArmor())
-	fmt.Printf("Name: %s\n", ace.GetName())
 }
