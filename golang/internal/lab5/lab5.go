@@ -108,7 +108,6 @@ func main() {
 	}
 
 	ace.SetName("ACE 456")
-
 	fmt.Println("\nИзмененные значения ACE:")
 	fmt.Printf("Firepower: %.2f\n", ace.GetFirepower())
 	fmt.Printf("Speed: %.2f\n", ace.GetSpeed())
