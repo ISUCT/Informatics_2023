@@ -9,20 +9,20 @@ func Calc(a, b, x float64) float64 {
 	return y
 }
 
-func Part_1(a float64, b float64) []float64 {
-	var r_a = make([]float64, 0)
-	for x := 0.77; x < 1.77; x += 0.2 {
+func Part_1(a float64, b float64, xn float64, xk float64, dx float64) []float64 {
+	size := int((xk-xn)/dx) + 1
+	var r_a = make([]float64, 0, size)
+	for x := xn; x <= xk; x += dx {
 		y := Calc(a, b, x)
 		r_a = append(r_a, y)
 	}
 	return r_a
 }
 
-func Part_2(a float64, b float64) []float64 {
-	var xs = [5]float64{1.24, 1.38, 2.38, 3.21, 0.68}
+func Part_2(slice []float64, a float64, b float64) []float64 {
 	var r_b = make([]float64, 0)
-	for i := 0; i < len(xs); i++ {
-		x := xs[i]
+	for i := 0; i < len(slice); i++ {
+		x := slice[i]
 		y := Calc(a, b, x)
 		r_b = append(r_b, y)
 	}
