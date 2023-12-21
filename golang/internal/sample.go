@@ -13,7 +13,7 @@ func Formula(x float64) float64 {
 func TaskA(x_n, x_k, x_z float64) []float64 {
 	var num_of_elements int = int((x_k) - (x_n)/x_z + 1) 
 	var otvetA = make([]float64, 0, num_of_elements)
-	fot i := x_n; i <= x_end; i= i + x_z {
+	for i := x_n; i <= x_end; i= i + x_z {
 		otvetA = append(otvetA, Formula(i))
 	}
 	return otvetA
