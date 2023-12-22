@@ -14,11 +14,12 @@ func main() {
 	fmt.Println("Task_B:", lab4.Task_B(7.2, 1.3, []float64{2.4, 2.8, 3.9, 4.7, 3.16}))
 
 	fmt.Println("2 вариант: лисица")
-	var lisa1 lab5.Lisica = lab5.Lisica{
-		Name:  "Alisa",
-		Color: "orange",
-		Age:   4,
-	}
-	fmt.Println(lisa1.GetAge())
-	fmt.Printf("The color of the %s is %s \n", lisa1.Name, lisa1.GetColor())
+	lisitca1, _ := lab5.NewAnimalLisitca(
+		"Alisa",
+		"orange",
+		4,
+	)
+	fmt.Println(lisitca1)
+	fmt.Println(lisitca1.Voice("шурхшурхшурх"))
+	fmt.Println(lisitca1.Calling())
 }
