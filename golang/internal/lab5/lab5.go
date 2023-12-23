@@ -1,12 +1,16 @@
 package lab5
 
 import (
-	"fmt"
+	"errors"
 )
 
 type Years_old int
 type Grams int
 
+const (
+	ErrIncorrectWeight = "incorrect weight"
+	ErrIncorrectAge = "incorrect age"
+)
 type Bunny struct {
 	age Years_old
 	weight Grams
@@ -18,7 +22,7 @@ func (b *Bunny) SetAge(age Years_old) error {
 		b.age = age
 		return nil
 	}
-	return fmt.Errorf("Incorrect age of bunny.")
+	return errors.New(ErrIncorrectAge)
 }
 
 func (b *Bunny) SetWeight(weight Grams) error {
@@ -26,7 +30,7 @@ func (b *Bunny) SetWeight(weight Grams) error {
 		b.weight = weight
 		return nil
 	}
-	return fmt.Errorf("Incorrect weight of bunny.")
+	return errors.New(ErrIncorrectWeight)
 }
 
 func (b *Bunny) SetName(name string) {
@@ -51,17 +55,11 @@ func NewBunny(age Years_old, weight Grams, name string) (*Bunny, error) {
 		weight: weight,
 		name: name,
 	}
-	err1 := tmp.SetAge(age)
-	err2 := tmp.SetWeight(weight)
-	if (err1 != nil && err2 != nil) {
-		return nil, fmt.Errorf("Incorrect age and weight of bunny!")
-	} else {
-	if (err1 != nil) {
-		return nil, err1
+	if err := tmp.SetAge(age); err != nil {
+		return nil, err
 	}
-	if (err2 != nil) {
-		return nil, err2
+	if err := tmp.SetWeight(weight); err != nil {
+		return nil, err
 	}
 	return tmp, nil
-	}
 }

@@ -13,7 +13,7 @@ func main() {
 	fmt.Println(a1)
 	fmt.Println(a2)
 	
-	bunny, err := lab5.NewBunny(9, 4000, "Bunny")
+	bunny, err := lab5.NewBunny(10, 4000, "Bunny")
 	
 	if (err == nil) {
 		fmt.Printf("Bunny's age is %d\n", bunny.GetAge())
