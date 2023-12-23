@@ -8,13 +8,17 @@ import (
 )
 
 func main() {
-	lab4.Zad1()
-	values := []float64{0.1, 0.3, 0.4, 0.45, 0.65}
-	result := lab4.Zad2(values)
-	for i, x := range values {
-		formattedResult := fmt.Sprintf("%.3f", result[i])
-		fmt.Println("При x=", x, " y=", formattedResult)
+	//Work1
+	fmt.Println("AnswerOnWork1:")
+	resultWork1 := Lab4.Work1(2.0, 1.1, 0.08, 1.08, 0.2)
+	fmt.Println(resultWork1)
+	//Work2
+	SliceWork2 := []float64{0.1, 0.3, 0.4, 0.45, 0.65}
+	fmt.Println("AnswerOnWork2:")
+	resultSlice := Lab4.Work2(SliceWork2, 2.0, 0)
+	fmt.Println(resultSlice)
 	}
+	
 	fmt.Println("Мазуров Даниил Алексеевич")
 
 	ace, err := lab5.NewACE(1000, 2000, 3000, "ACE 123")
