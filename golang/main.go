@@ -2,12 +2,9 @@ package main
 
 import (
 	"fmt"
-	"math"
-)
 
-func result(a float64, b float64, x float64) float64 {
-	return (math.Pow((a+b*x)/(math.Pow(math.Log10(x), 3)), 1/5))
-}
+	"isuct.ru/informatics2022/lab4"
+)
 
 func main() {
 	fmt.Println("Спиридонова Полина Алексеевна")
@@ -19,13 +16,10 @@ func main() {
 	x_delta := 0.63
 
 	fmt.Println("Решение задачи под буквой А")
-	for x := x_start; x < x_end; x += x_delta {
-		fmt.Println(result(a, b, x))
-	}
+	answers := lab4.TaskA(a, b, x_start, x_end, x_delta)
+	lab4.Output(answers)
 
 	fmt.Println("Решение задачи под буквой B")
-	var values = [5]float64{2.4, 2.8, 3.9, 4.7, 3.16}
-	for i := 0; i < len(values); i++ {
-		fmt.Println(result(a, b, values[i]))
-	}
+	answers = lab4.TaskB(a, b, []float64{2.4, 2.8, 3.9, 4.7, 3.16})
+	lab4.Output(answers)
 }
