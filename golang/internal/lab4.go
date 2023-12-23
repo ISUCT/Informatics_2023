@@ -4,6 +4,10 @@ import (
 	"math"
 )
 
+func Summ(a, b int) int {
+	return a + b
+}
+
 const b = 2.5
 
 func fnk1(b, x float64) float64 {
