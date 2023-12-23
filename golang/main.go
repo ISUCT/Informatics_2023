@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 
 	"isuct.ru/informatics2022/internal/lab4"
 	"isuct.ru/informatics2022/internal/lab5"
@@ -15,15 +14,11 @@ func main() {
 	fmt.Println("Task_B:", lab4.Task_B(7.2, 1.3, []float64{2.4, 2.8, 3.9, 4.7, 3.16}))
 
 	fmt.Println("2 вариант: лисица")
-	lisitca1, err := lab5.NewAnimalLisitca(
-		"Алиса",
-		"оранжевый",
+	lisitca1, _ := lab5.NewAnimalLisitca(
+		"Alisa",
+		"orange",
 		4,
 	)
-	if err != nil {
-		log.Fatal(err)
-	}
-
 	fmt.Println(lisitca1)
 	fmt.Println(lisitca1.Voice("шурхшурхшурх"))
 	fmt.Println(lisitca1.Calling())

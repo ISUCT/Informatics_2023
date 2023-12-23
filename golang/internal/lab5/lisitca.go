@@ -8,7 +8,7 @@ import (
 // структура лисица
 type lisitca struct {
 	name  string
-	color colors
+	color string
 	age   int
 }
 
@@ -30,21 +30,13 @@ func (l *lisitca) GetAge() int {
 // проверка и установка цвета
 var ErrorColorIsIncorrect = errors.New("цвет указан не верно")
 
-type colors string
-
-const (
-	оранжевый colors = "оранжевый"
-	белый     colors = "белый"
-	красный   colors = "красный"
-	серый     colors = "серый"
-	бурый     colors = "бурый"
-)
-
-func (l *lisitca) SetColor(color colors) error {
-	switch color {
-	case оранжевый, белый, красный, серый, бурый:
-		l.color = color
-		return nil
+func (l *lisitca) SetColor(color string) error {
+	colors := []string{"orange", "red", "gray", "brown", "white", "оранжевый", "красный", "серый", "бурый", "белый"}
+	for _, c := range colors {
+		if c == color {
+			l.color = color
+			return nil
+		}
 	}
 	return ErrorColorIsIncorrect
 }
@@ -63,7 +55,7 @@ func (l *lisitca) GetName() string {
 }
 
 // создание нового персонажа лисицы
-func NewAnimalLisitca(name string, color colors, age int) (*lisitca, error) {
+func NewAnimalLisitca(name, color string, age int) (*lisitca, error) {
 	animal := &lisitca{
 		name: name,
 	}
