@@ -8,12 +8,6 @@ import (
 	"isuct.ru/informatics2022/lab5"
 )
 
-func ErrorTest(err error) {
-	if err != nil {
-		log.Fatal(err)
-	}
-}
-
 func main() {
 	fmt.Println("Голосова Анастасия Сергеевна")
 
@@ -26,15 +20,20 @@ func main() {
 	lab4.Solution(a, b, x_start, x_end, x_delta)
 	fmt.Printf("Structure\n")
 
-	foxy, err_a, err_g := lab5.NewFox("Alisa", "female", 0)
-	ErrorTest(err_a)
-	ErrorTest(err_g)
+	foxy, err := lab5.NewFox("Alisa", "female", 0)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	err_a = foxy.SetAge(12)
-	ErrorTest(err_a)
+	err = foxy.SetAge(12)
+	if err != nil {
+		log.Fatal(err)
+	}
 
-	err_g = foxy.SetGender("female")
-	ErrorTest(err_g)
+	err = foxy.SetGender("female")
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	image := foxy.GetView()
 

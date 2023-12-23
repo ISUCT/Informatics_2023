@@ -1,6 +1,9 @@
 package lab5
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 type fox struct {
 	name   string
@@ -40,7 +43,8 @@ func (f *fox) SetAge(age int) error {
 		f.age = age
 		return nil
 	}
-	return fmt.Errorf("Foxes don't live that long")
+	ErrWrongAge := errors.New("Foxes don't live that long")
+	return ErrWrongAge
 }
 
 func (f *fox) SetGender(gender string) error {
@@ -48,18 +52,23 @@ func (f *fox) SetGender(gender string) error {
 		f.gender = gender
 		return nil
 	}
-	return fmt.Errorf("Fox can only be male or female")
+	ErrWrongGender := errors.New("Fox can only be male or female")
+	return ErrWrongGender
 }
 
-func NewFox(Name, Gender string, Age int) (fox, error, error) {
+func NewFox(name, gender string, age int) (fox, error) {
 	var f fox = fox{
-		name:   Name,
-		age:    Age,
-		gender: Gender,
+		name:   name,
+		age:    age,
+		gender: gender,
 	}
-	var err_a = f.SetAge(Age)
-	var err_g = f.SetGender(Gender)
-	return f, err_a, err_g
+	var err = f.SetAge(age)
+	if err != nil {
+		return f, err
+	} else if err = f.SetGender(gender); err != nil {
+		return f, err
+	}
+	return f, err
 }
 
 func (f fox) DisplayFox() {
