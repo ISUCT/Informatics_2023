@@ -21,7 +21,7 @@ func TaskA(start, end, x float64) []float64 {
 	return answers
 }
 
-func TaskB(numbers [5]float64) []float64 {
+func TaskB(numbers []float64) []float64 {
 	var answers []float64 = make([]float64, 0, len(numbers))
 	for i := 0; i < len(numbers); i++ {
 		answers = append(answers, f(numbers[i]))
