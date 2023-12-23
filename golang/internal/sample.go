@@ -9,7 +9,7 @@ func Summ(a, b int) int {
 }
 
 func Cycle(xn, xk, xd float64) []float64 {
-	var numbers_cycle = []float64{}
+	var numbers_cycle = make([]float64, 0, int(((xk-xn)/xd)+1))
 	for i := xn; i <= xk; i = i + xd {
 		numbers_cycle = append(numbers_cycle, FuncResolution(i))
 	}
