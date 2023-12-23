@@ -8,6 +8,9 @@ import (
 
 func main() {
 	fmt.Println("Сысуйкин Денис Дмитриевич")
-	fmt.Println("Результаты TaskA:", lab4.TaskA(2.25, 1.2, 2.7, 0.3))
-	fmt.Println("Результаты TaskB:", lab4.TaskB(2.25, 1.31, 1.39, 1.44, 1.56, 1.92))
+	SliceTaskA := lab4.TaskA(2.25, 1.2, 2.7, 0.3)
+	fmt.Println("Результаты TaskA:", SliceTaskA)
+	SliceForTaskB := []float64{2.25, 1.31, 1.39, 1.44, 1.56, 1.92}
+	resultS := lab4.TaskB(SliceForTaskB, 2.25)
+	fmt.Println("Результаты TaskB:", resultS)
 }

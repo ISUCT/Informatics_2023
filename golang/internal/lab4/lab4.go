@@ -8,21 +8,18 @@ func calculateResult(a, x float64) float64 {
 
 func TaskA(a, xn, xk, deltaX float64) []float64 {
 	x := xn
-	results := []float64{}
+	sliceTaskA := make([]float64, 0, int((xk-xn)/deltaX)+1)
 	for x <= xk {
-		result := calculateResult(a, x)
-		results = append(results, result)
+		sliceTaskA = append(sliceTaskA, calculateResult(a, x))
 		x += deltaX
 	}
-	return results
+	return sliceTaskA
 }
 
-func TaskB(a, x1, x2, x3, x4, x5 float64) []float64 {
-	values := []float64{x1, x2, x3, x4, x5}
-	results := []float64{}
-	for _, x := range values {
-		result := calculateResult(a, x)
-		results = append(results, result)
+func TaskB(slice []float64, a float64) []float64 {
+	results := make([]float64, 0, len(slice))
+	for _, x := range slice {
+		results = append(results, calculateResult(a, x))
 	}
 	return results
 }
