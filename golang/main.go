@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	lab4 "isuct.ru/informatics2022/internal/Lab4"
+	"isuct.ru/informatics2022/internal/Lab4"
 	"isuct.ru/informatics2022/internal/lab5"
 )
 
@@ -17,8 +17,7 @@ func main() {
 	fmt.Println("AnswerOnWork2:")
 	resultSlice := Lab4.Work2(SliceWork2, 2.0, 0)
 	fmt.Println(resultSlice)
-	}
-	
+
 	fmt.Println("Мазуров Даниил Алексеевич")
 
 	ace, err := lab5.NewACE(1000, 2000, 3000, "ACE 123")
