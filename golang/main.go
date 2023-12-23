@@ -43,7 +43,7 @@ func main() {
 	anotherCat, err := catStruct.NewCat(9, "No name", "unknown")
 	checkForError(err)
 
-	cat.SetAge(3)
+	err = cat.SetAge(3)
 	checkForError(err)
 
 	anotherCat.SetName("Marshal")
