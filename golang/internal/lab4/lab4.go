@@ -21,7 +21,7 @@ func Primer1(xn, xk, deltaX float64) []float64 {
 func Primer2(slice []float64) []float64 {
 	myslicefortask2 := make([]float64, 0, len(slice))
 	for _, x := range slice {
-		myslicefortask2 = append(myslicefortask2, (x))
+		myslicefortask2 = append(myslicefortask2, Calc(x))
 	}
 	return myslicefortask2
 }
