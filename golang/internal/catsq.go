@@ -5,7 +5,7 @@ import "fmt"
 type cat struct {
 	name string
 	age  int
-  colour string
+	colour string
 }
 
 //первый метод addage для получателя cat1
