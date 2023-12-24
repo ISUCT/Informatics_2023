@@ -25,5 +25,5 @@ func SetName(new_name string, c *cat) string {
 	return c.name
 }
 func PrintInfCat(c *cat) {
-	fmt.Println("Cat's name is", c.name, "\nCat's breed is", c.breed, "\nCat's age is", c.age)
+	fmt.Println("Cat's name is", c.name, "\nCat's breed is", c.breed, "\nCat's age is", c.age, "\n------------------------------")
 }
