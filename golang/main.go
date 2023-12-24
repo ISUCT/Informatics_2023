@@ -3,22 +3,19 @@ package main
 import (
 	"fmt"
 
-	"isuct.ru/informatics2022/internal/lab4"
+	"isuct.ru/informatics2022/internal/lab5"
 )
 
 // вариант 12
-func print_answer(xArr, yArr []float64) {
-	for i := range xArr {
-		fmt.Println("При x=", xArr[i], "y=", yArr[i])
-	}
-}
 func main() {
-	var a float64 = 1.6
+	human_1, err := lab5.Newperson(37, "Сергей", "муж")
+	lab5.CheckError(err)
+	human_1.Set_Name("Константин")
+	human_1.Set_Age(40)
 
-	x, y := lab4.TaskA(a, 1.2, 3.7, 0.5)
-	print_answer(x, y)
-
-	var listik []float64 = []float64{1.28, 1.36, 2.47, 3.68, 4.56}
-	x, y = lab4.TaskB(a, listik)
-	print_answer(x, y)
+	fmt.Printf("%s - %d\n", human_1.Get_Name(), human_1.Get_Age())
+	human_2, err := lab5.Newperson(18, "Ульяна", "жен")
+	lab5.CheckError(err)
+	fmt.Printf("%s - %d\n", human_2.Get_Name(), human_2.Get_Age())
+	human_2.Death_person()
 }
