@@ -2,25 +2,27 @@ package main
 
 import (
 	"fmt"
-	"math"
+
+	"isuct.ru/informatics2022/internal/lab4"
 )
 
-func Calculate(a float64, b float64, x float64) float64 {
-	return (math.Cbrt(a*x+b) / math.Pow(math.Log10(x), 2))
+func prnt(xL []float64, yL []float64) {
+	for i := range yL {
+		fmt.Printf("x = %.2f, y = %f\n", xL[i], yL[i])
+	}
 }
 
 func main() {
+	fmt.Println("Aminov_Nikita_Andreevich")
+
+	//lab3 + 4 - вариант 1
+	//task 1
 	var a = 1.35
 	var b = 0.98
-	var begx = 1.14
-	var finx = 4.24
-	var detx = 0.62
-	for i := begx; i <= finx; i += detx {
-		fmt.Println(Calculate(a, b, i))
-	}
-	var xList = [5]float64{0.35, 1.28, 3.51, 5.21, 4.16}
-	for i := 0; i < len(xList); i++ {
-		fmt.Println(Calculate(a, b, xList[i]))
-	}
-	fmt.Println("Aminov Nikita Andreevich") // вторая лаба потому что ругается линт при коммите двух лаб
+	prnt(lab4.TaskA(1.14, 4.24, 0.62, a, b))
+
+	//task 2
+	var xList = []float64{0.35, 1.28, 3.51, 5.21, 4.16}
+
+	prnt(xList, lab4.TaskB(xList, a, b))
 }
