@@ -17,8 +17,13 @@ func main() {
 	fmt.Println(res2)
 
 	//lab5
-	dish := dishstruct.NewDish(5000, "soup", "Borsch")
-	err := dish.SetPrice(5000)
+	dish, err := dishstruct.NewDish(500, "soup", "Borsch")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	err = dish.SetPrice(400)
 	if err != nil {
 		fmt.Println(err)
 		return

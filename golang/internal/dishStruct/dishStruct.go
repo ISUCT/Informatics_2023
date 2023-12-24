@@ -11,13 +11,16 @@ type dish struct {
 	name  string
 }
 
-func NewDish(setPrice int, setVid, setName string) *dish {
+func NewDish(price int, setVid, setName string) (*dish, error) {
 	d := &dish{
-		price: setPrice,
+		price: price,
 		vid:   setVid,
 		name:  setName,
 	}
-	return d
+	if err := d.SetPrice(price); err != nil {
+		return nil, err
+	}
+	return d, nil
 }
 
 func (d dish) GetPrice() int {
@@ -37,7 +40,7 @@ func (d *dish) SetName(name string) {
 }
 
 func (d *dish) SetPrice(price int) error {
-	if price >= 5000 {
+	if price >= 5000 || price < 0 {
 		return errors.New("The dish is not affordable")
 	}
 	d.price = price
