@@ -22,7 +22,7 @@ func TaskA(begX, finX, detX, a, b float64) ([]float64, []float64) {
 
 // task 2
 func TaskB(xList []float64, a float64, b float64) []float64 {
-	var yList = make([]float64, 0)
+	var yList = make([]float64, 0, 5)
 	for i := range xList {
 		yList = append(yList, calculate(xList[i], a, b))
 	}
