@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+
 	"isuct.ru/informatics2022/internal/lab4"
 	structDish "isuct.ru/informatics2022/internal/structDish"
 )
@@ -10,7 +11,7 @@ func main() {
 	//Лабораторная 2
 	fmt.Println("Naumova Alena Alekseevna")
 
-	//Лабораторная 3 - вариант 14
+	//Лабораторная 3 - вариант 14s
 
 	//Решение под А
 	a := 7.2
@@ -34,5 +35,6 @@ func main() {
 	dish.ChangeName("Борщ")
 
 	fmt.Printf("Your dish's price is %d\n", dish.GetPrice())
+	dish.ChangePrice(100)
 	fmt.Println(dish)
 }

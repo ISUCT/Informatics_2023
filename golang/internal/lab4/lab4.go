@@ -24,3 +24,6 @@ func TaskB(list []float64, a, b float64) []float64 {
 	}
 	return list2
 }
+
+
+
