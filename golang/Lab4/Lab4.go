@@ -1,11 +1,11 @@
-package lab4
+package Lab4
 
 import (
 	"fmt"
 	"isuct.ru/informatics2022/internal"
 )
 
-func lab4() {
+func Lab4() {
 	fmt.Println("Мутовкин Илья Алексеевич")
 	
 	taskAResults := internal.ZadachkamathForRange()
