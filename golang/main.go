@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"isuct.ru/informatics2022/internal/lab4"
+	"isuct.ru/informatics2022/internal/structures"
 )
 
 func main() {
@@ -19,4 +20,10 @@ func main() {
 	for i := range y {
 		fmt.Println("При x =", x[i], "y =", y[i])
 	}
+	//lab5
+	char := structures.Char("Alduin", "Berserk", 20)
+	fmt.Println(char)
+	char.Lvl(30)
+	char.Class("Hunt")
+	fmt.Println(char)
 }
