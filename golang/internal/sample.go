@@ -48,10 +48,10 @@ type Piggy struct {
 
 func Structure() {
 	var PiggyBlin Piggy = Piggy{name: "Rose", age: 4, breed: "Mangalitsa", sex: "female", color: "brown"}
-	PiggyBlin.print()
 	PiggyBlin.setName("Teodora")
 	PiggyBlin.setColor("Pink")
 	PiggyBlin.setBreed("Hereford")
+	PiggyBlin.print()
 }
 
 func (pig Piggy) print() {
