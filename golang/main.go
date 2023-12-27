@@ -3,12 +3,24 @@ package main
 import (
 	"fmt"
 
-	"isuct.ru/informatics2022/internal"
+	"isuct.ru/informatics2022/internal/lab5"
 )
 
 func main() {
-	fmt.Println("Иванова Анастасия Евгеньевна")
-	fmt.Println("Вариант 7")
-	fmt.Println(internal.Task_A(3.2, 6.2, 0.6))
-	fmt.Println(internal.Task_B([]float64{4.48, 3.56, 2.78, 5.28, 3.21}))
+	fmt.Println("Lab 5")
+	fmt.Println("Телевизор 1")
+	tv1, err := lab5.NewTv("Samsung", "Black", 63)
+	if err != nil {
+		fmt.Printf("%v", err)
+	}
+	fmt.Println(tv1.GetSound())
+	tv1.SetSound(25)
+	fmt.Println(tv1.GetSound())
+	tv1.TurnOn()
+	fmt.Println("\nТелевизор 2")
+	tv2, err := lab5.NewTv("Xiaomi", "White", 120)
+	if err != nil {
+		fmt.Printf("%v\n", err)
+	}
+	fmt.Println(tv2.GetModel())
 }
