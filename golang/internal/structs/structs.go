@@ -16,7 +16,6 @@ func (a phone) GetNumber() int {
 }
 func CreateStruct(number int, provider, name string) phone {
 	return phone{number, provider, name}
-
 }
 func (a phone) GetName() string {
 	return a.name
