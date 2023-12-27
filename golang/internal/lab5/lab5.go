@@ -1,6 +1,8 @@
 package lab5
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type tv struct {
 	model string
