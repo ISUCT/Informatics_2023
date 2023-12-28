@@ -26,10 +26,13 @@ func main() {
 	}
 	// lab 5
 	fmt.Println("lab 5")
-	cat := lab5.CreateStruct(5, "Siamese", "Alice")
+	cat, err := lab5.CreateStruct(14, "Siamese", "Alice")
+	lab5.CheckErr(err)
 	lab5.PrintInfCat(&cat)
-	lab5.SetAge(7, &cat)
-	lab5.SetBreed("British", &cat)
-	lab5.SetName("Oleg", &cat)
-	lab5.PrintInfCat(&cat)
+	cat2, err := lab5.CreateStruct(2, "British", "Oleg")
+	lab5.CheckErr(err)
+	lab5.PrintInfCat(&cat2)
+	cat3, err := lab5.CreateStruct(25, "Street", "Anton")
+	lab5.CheckErr(err)
+	lab5.PrintInfCat(&cat3)
 }
