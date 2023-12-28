@@ -10,21 +10,19 @@ func formula(x float64) float64 {
   return ((math.Pow((math.Log10(a+x)),2)) / (math.Pow((a+x),2)))
 }
 
-fanc TaskA(xn,xk,dx float64) ([]float64, []float64){
-	x:=float64
-	y:=float64
+func TaskA(xn,xk,dx float64) ([]float64, []float64){
+	x := make([]float64, 0, (int((xk-xn)/dx + 1)))
+	y := make([]float64, 0, len(x))
 	for i:=xn; i<=xk; i+=dx{
-		x = appennd(x,i)
-		y = appennd(y,f(i))
+		x = append(x, i)
+		y = append(y, formula(i))
 	}
 	return x,y
 }
-func TaskB(array []float64) ([]float64, []float64){
-	y:=[]float64{}
-	x:=[]float64{}
-	for _, i:=range array{
-		y=appennd(y,formula(i))
-		x=appennd(x,i)
+func TaskB(array []float64) []float64 {
+	y := make([]float64, 0, len(array))
+	for _, i := range array {
+	 y = append(y, f(i))
 	}
-	return x,y
+	return y
 }
