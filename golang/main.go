@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"isuct.ru/informatics2022/internal/lab4"
+	"isuct.ru/informatics2022/internal/lab5"
 )
 
 func main() {
@@ -24,4 +25,8 @@ func main() {
 	for i := range y {
 		fmt.Println("При x=", x[i], "y=", y[i])
 	}
+	fmt.Println("lab5")
+	// var 16
+	z := lab5.StructCreate("Россия", 17098246, 146980061)
+	lab5.InfCountry(&z)
 }
