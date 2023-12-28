@@ -4,9 +4,11 @@ import (
 	"fmt"
 
 	"isuct.ru/informatics2022/internal/lab4"
+	"isuct.ru/informatics2022/internal/lab5"
 )
 
 func main() {
+	fmt.Println("lab 4")
 	a := 2.25
 	Xs := 1.2
 	Xe := 2.7
@@ -22,4 +24,15 @@ func main() {
 	for i := range y {
 		fmt.Println("При x=", x[i], "y=", y[i])
 	}
+	// lab 5
+	fmt.Println("lab 5")
+	cat, err := lab5.CreateStruct(14, "Siamese", "Alice")
+	lab5.CheckErr(err)
+	lab5.PrintInfCat(&cat)
+	cat2, err := lab5.CreateStruct(2, "British", "Oleg")
+	lab5.CheckErr(err)
+	lab5.PrintInfCat(&cat2)
+	cat3, err := lab5.CreateStruct(25, "Street", "Anton")
+	lab5.CheckErr(err)
+	lab5.PrintInfCat(&cat3)
 }
