@@ -1,8 +1,9 @@
-package Lab4
+package Lab4_5
 
 import (
 	"fmt"
 	"isuct.ru/informatics2022/internal"
+	"isuct.ru/informatics2022/Lab5"
 )
 
 func Lab4() {
@@ -20,4 +21,11 @@ func Lab4() {
 
 	taskBResults := internal.ZadachkamathForValues(a, b, values)
 	fmt.Println("Результаты TaskB:", taskBResults)
+func Lab5() {
+	myDog, err := Lab5.NewDog("Rex", -5, 30.0)
+	if err != nil {
+		fmt.Println(err)
+	} else {
+		fmt.Println(myDog.GetAge())
+	}
 }
