@@ -21,6 +21,7 @@ func Lab4() {
 
 	taskBResults := internal.ZadachkamathForValues(a, b, values)
 	fmt.Println("Результаты TaskB:", taskBResults)
+}
 func Lab5() {
     myDog, err := dog.NewDog("Rex", -5, 30.0)
     if err != nil {
