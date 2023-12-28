@@ -3,6 +3,7 @@ package Lab4_5
 import (
 	"fmt"
 	"isuct.ru/informatics2022/internal"
+	"isuct.ru/informatics2022/lab5"
 )
 
 func Lab4() {
