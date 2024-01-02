@@ -16,7 +16,7 @@ func checkForError(err error) {
 
 func main() {
 	//Лабораторная 2
-	fmt.Println("Коротков Дaнилdssdа Максимович")
+	fmt.Println("Коротков Дaнилdsdfsdfsdfssdа Максимович")
 	//Лабораторная 3,4 (9 Вариант)
 	a := 1.1
 	b := 0.09
