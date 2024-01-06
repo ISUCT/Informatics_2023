@@ -1,0 +1,37 @@
+package main
+
+import "fmt"
+
+type Pistol struct {
+    model   string
+    caliber float64
+    isLoaded bool
+}
+
+func (p *Pistol) fire() {
+    if p.isLoaded {
+        fmt.Println("Выстрел!")
+        p.isLoaded = false
+    } else {
+        fmt.Println("Пистолет не заряжен")
+    }
+}
+
+func (p *Pistol) load() {
+    p.isLoaded = true
+    fmt.Println("Пистолет заряжен")
+}
+
+func (p *Pistol) clean() {
+    fmt.Println("Пистолет очищен")
+}
+
+func main() {
+    myPistol := Pistol{model: "Glock 17", caliber: 9.0, isLoaded: false}
+    fmt.Println("Модель пистолета:", myPistol.model)
+    fmt.Println("Калибр пистолета:", myPistol.caliber)
+
+    myPistol.load()
+    myPistol.fire()
+    myPistol.clean()
+}
