@@ -6,13 +6,13 @@ import (
 )
 
 // структура лисичка
-type Fox struct {
+type fox struct {
 	name  string
 	age   int
 	color colors
 }
 
-func (f Fox) GetView() string {
+func (f fox) GetView() string {
 	return `
 	 /\   /\   
 	//\\_//\\     ____
@@ -25,18 +25,18 @@ func (f Fox) GetView() string {
 	  _[ [ \  /_/ 
 `
 }
-func (f Fox) GetName() string {
+func (f fox) GetName() string {
 	return f.name
 }
-func (f Fox) GetAge() int {
+func (f fox) GetAge() int {
 	return f.age
 }
-func (f Fox) GetColor() colors {
+func (f fox) GetColor() colors {
 	return f.color
 }
 
 // проверка возраста
-func (f *Fox) SetAge(age int) error {
+func (f *fox) SetAge(age int) error {
 	if age >= 0 && age < 33 {
 		f.age = age
 		return nil
@@ -56,7 +56,7 @@ const (
 )
 
 // проверка цвета
-func (f *Fox) SetColor(color colors) error {
+func (f *fox) SetColor(color colors) error {
 	switch color {
 	case red, white, grey, black:
 		f.color = color
@@ -65,8 +65,8 @@ func (f *Fox) SetColor(color colors) error {
 	ErrorColorIsIncorrect := errors.New("foxes don't have such color")
 	return ErrorColorIsIncorrect
 }
-func NewFox(name string, age int, color colors) (Fox, error) {
-	var f Fox = Fox{
+func NewFox(name string, age int, color colors) (fox, error) {
+	var f fox = fox{
 		name:  name,
 		age:   age,
 		color: color}
@@ -78,6 +78,6 @@ func NewFox(name string, age int, color colors) (Fox, error) {
 	}
 	return f, err
 }
-func (f Fox) DisplayFox() {
+func (f fox) DisplayFox() {
 	fmt.Printf("   Name - %s\n   Age - %d\n   Color - %s", f.name, f.age, f.color)
 }
