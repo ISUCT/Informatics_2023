@@ -26,7 +26,7 @@ func main() {
 	lab4.Output(answers)
 
 	fmt.Printf("Структура\n")
-	foxy, err := lab5.NewFox("Felix", 5, "red")
+	foxy, err := lab5.NewFox("Foxy", 5, "red")
 	if err != nil {
 		log.Fatal(err)
 	}
