@@ -15,11 +15,5 @@ func main() {
 	x_end := 6.5
 	x_delta := 0.6
 
-	fmt.Println("Решения задачи под А:")
-	values := lab4.TaskA(a, b, x_begin, x_end, x_delta)
-	lab4.Output(values)
-
-	fmt.Println("Решения задачи под В:")
-	values = lab4.TaskB(a, b, []float64{2.89, 3.54, 5.21, 6.28, 3.48})
-	lab4.Output(values)
+	lab4.Solve(a, b, x_begin, x_end, x_delta)
 }
