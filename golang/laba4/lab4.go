@@ -5,14 +5,14 @@ import (
 	"math"
 )
 
-func formula(a, x float64) float64 {
+func Formula(a, x float64) float64 {
 	return ((math.Pow((math.Log(a + x)), 2)) / (math.Pow((a + x), 2)))
 }
 
 func TaskA(a, x_start, x_end, x_step float64) []float64 {
 	y := make([]float64, 0, int((x_end-x_start)/x_step))
 	for x := x_start; x <= x_end; x += x_step {
-		y = append(y, formula(a, x))
+		y = append(y, Formula(a, x))
 	}
 	return y
 }
@@ -20,7 +20,7 @@ func TaskA(a, x_start, x_end, x_step float64) []float64 {
 func TaskB(a float64, array []float64) []float64 {
 	y := make([]float64, 0, len(array))
 	for _, x := range array {
-		y = append(y, formula(a, x))
+		y = append(y, Formula(a, x))
 	}
 	return y
 }
