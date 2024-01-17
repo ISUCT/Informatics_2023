@@ -16,11 +16,9 @@ func main() {
 
 	player.PrintDetails()
 
-	// Изменение имени персонажа
 	player.SetName("Диджей Миша")
 	fmt.Println("Имя персонажа после изменения:", player.Name)
 
-	// Вывод общей силы персонажа
 	power := player.GetOverallPoints()
 	fmt.Println("Общая сила персонажа:", power)
 }
