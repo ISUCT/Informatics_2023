@@ -2,7 +2,7 @@ package lab4
 
 import "errors"
 
-const fieldWidht = 8
+const fieldWidth = 8
 const fieldHeight = 8
 const maxShipLength = 4
 
@@ -14,7 +14,6 @@ type ship struct {
 }
 
 func NewShip(width, height, x, y uint8) (*ship, error) {
-
 	if width > 1 && height > 1 {
 		return nil, errors.New("Unsupported ship sizes.")
 	}
@@ -62,7 +61,7 @@ func (instance *ship) Y() uint8 {
 }
 
 func (instance *ship) SetX(x uint8) error {
-	if x+instance.width > fieldWidht {
+	if x+instance.width > fieldWidth {
 		return errors.New("Ship go out of field bounds.")
 	}
 
@@ -71,7 +70,7 @@ func (instance *ship) SetX(x uint8) error {
 }
 
 func (instance *ship) SetY(y uint8) error {
-	if y+instance.height > fieldWidht {
+	if y+instance.height > fieldHeight {
 		return errors.New("Ship go out of field bounds.")
 	}
 
