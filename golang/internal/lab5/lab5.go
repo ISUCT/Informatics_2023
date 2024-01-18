@@ -2,6 +2,7 @@ package lab5
 
 import (
 	"fmt"
+	"errors"
 )
 
 type city struct {
@@ -13,11 +14,17 @@ func (c city) GetPopulation() int {
 	return c.population
 }
 
-func NewCity(setPopulation int, setCountry string) city {
-	return city{
+func NewCity(setPopulation int, setCountry string) (*city, error) {
+	c := &city{
 		population: setPopulation,
 		country:    setCountry,
 	}
+
+	if err := c.SetPopulation(setPopulation); err != nil {
+		return nil, err
+	}
+
+	return c, nil
 }
 
 func (c *city) SetCountry(country string) {
@@ -29,7 +36,7 @@ func (c *city) SetPopulation(population int) error {
 		c.population = population
 		return nil
 	}
-	return fmt.Errorf("invalid city population")
+	return errors.New("invalid city population")
 }
 
 func (c city) GetCountry() string {
