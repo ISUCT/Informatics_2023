@@ -3,6 +3,9 @@
 		{
 			"path": "."
 		},
+		{
+			"path": "../../../Struct test"
+		}
 	],
 	"settings": {
 		"files.exclude": {
