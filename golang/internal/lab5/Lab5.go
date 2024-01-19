@@ -86,7 +86,6 @@ func Lab5() *Mouse {
 		default:
 			fmt.Println("Имя не имя")
 		}
-
 	} else if Gender == "Мальчик" {
 		fmt.Println("Выберите вариант:")
 		fmt.Println("1. Болт")
