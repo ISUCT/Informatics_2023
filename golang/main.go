@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	Lab4 "isuct.ru/informatics2022/internal"
+	Lab5 "isuct.ru/informatics2022/internal/lab5"
 )
 
 func main() {
@@ -15,4 +16,16 @@ func main() {
 	fmt.Println("Чудов Даниил")
 	fmt.Println("17")
 	fmt.Println("Не женат")
+	myMouse := Lab5.Lab5()
+
+	fmt.Println("Поздравляю, вы собрали свою мышку!!!")
+	fmt.Println("Имя мышки:", myMouse.GetMouseName())
+	fmt.Println("Пол мышки:", myMouse.GetGender())
+	age, err := myMouse.GetAge()
+	if err != nil {
+		fmt.Println("Ошибка получения возраста:", err)
+	} else {
+		fmt.Println("Возраст мышки:", age)
+	}
+	fmt.Println("Цвет мышки:", myMouse.GetColor())
 }
