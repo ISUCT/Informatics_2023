@@ -17,7 +17,6 @@ func main() {
 	fmt.Println("17")
 	fmt.Println("Не женат")
 	myMouse := Lab5.Lab5()
-
 	fmt.Println("Поздравляю, вы собрали свою мышку!!!")
 	fmt.Println("Имя мышки:", myMouse.GetMouseName())
 	fmt.Println("Пол мышки:", myMouse.GetGender())

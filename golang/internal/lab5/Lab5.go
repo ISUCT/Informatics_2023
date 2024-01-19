@@ -54,12 +54,9 @@ func Lab5() *Mouse {
 	fmt.Println("Выберите пол:")
 	fmt.Println("1. Девочка")
 	fmt.Println("2. Мальчик")
-
 	var GenderChoice int
 	fmt.Scanln(&GenderChoice)
-
 	var Gender string
-
 	switch GenderChoice {
 	case 1:
 		Gender = "Девочка"
@@ -68,7 +65,6 @@ func Lab5() *Mouse {
 	default:
 		fmt.Println("Я конечно всё понимаю...но боевой вертолёт")
 	}
-
 	MyMouse := Mouse{}
 	MyMouse.SetGender(Gender)
 
@@ -77,7 +73,6 @@ func Lab5() *Mouse {
 		fmt.Println("1. Гаечка")
 		fmt.Println("2. Сирень")
 		fmt.Println("3. Марта")
-
 		var nameChoice int
 		fmt.Scanln(&nameChoice)
 
@@ -97,7 +92,6 @@ func Lab5() *Mouse {
 		fmt.Println("1. Болт")
 		fmt.Println("2. Шуруп")
 		fmt.Println("3. Гвоздь")
-
 		var nameChoice int
 		fmt.Scanln(&nameChoice)
 
@@ -117,7 +111,6 @@ func Lab5() *Mouse {
 	fmt.Println("Введите возраст мышки:")
 	fmt.Scanln(&AgeChoice)
 	MyMouse.SetAge(AgeChoice)
-
 	fmt.Println("Какого цвета ваша мышка:")
 	fmt.Println("1. Коричневая")
 	fmt.Println("2. Чёрная")
