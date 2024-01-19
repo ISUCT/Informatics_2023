@@ -7,7 +7,6 @@ import (
 )
 
 func main() {
-
 	fmt.Println("Калядина Алина Олеговна")
 	fmt.Println("Вариант 7")
 	fmt.Println(internal.CalcA(3.2, 6.2, 0.6))
